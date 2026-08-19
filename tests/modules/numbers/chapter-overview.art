@@ -1,0 +1,39 @@
+; Module area: Numbers
+; Source: https://arturo-lang.io/documentation/library/numbers
+; (module overview — not available from CLI info.get)
+; Official-function focus: pi epsilon tau, exp ln log, ceil floor round abs,
+; hypot, angle, factors, gcd lcm, prime?, sin/cos on pi/6.
+
+ensure.that: "pi is the circle constant" [3.14 < pi]
+ensure.that: "tau is 2 pi" [tau = 2 * pi]
+ensure.that: "web chapter: epsilon is e, not machine eps" [
+    and? (2.7 < epsilon) (epsilon < 2.8)
+]
+ensure.that: "epsilon matches exp 1" [epsilon = exp 1]
+
+ensure.that: "ln 10 is about 2.3" [and? (2.3 < ln 10) ((ln 10) < 2.31)]
+ensure.that: "log 100 10" [2.0 = log 100 10]
+ensure.that: "ceil 3.14" [4 = ceil 3.14]
+ensure.that: "floor 3.14" [3 = floor 3.14]
+ensure.that: "round 3.14" [3.0 = round 3.14]
+ensure.that: "abs neg 42" [42 = abs neg 42]
+
+z: to :complex [3 4]
+ensure.that: "abs of 3+4i is hypot" [5.0 = abs z]
+ensure.that: "angle of 3+4i works on this runtime" [floating? angle z]
+ensure.that: "hypot 3 4" [5.0 = hypot 3 4]
+
+ang: pi / 6
+ensure.that: "pi/6 uses float division" [floating? ang]
+ensure.that: "sin pi/6 rounds to 0.5" [0.5 = round.to: 2 sin ang]
+ensure.that: "asin 0.5 is about pi/6" [
+    0.0000001 > abs (ang - asin 0.5)
+]
+
+ensure.that: "prime? 17" [prime? 17]
+ensure.that: "factors 12" [[1 2 3 4 6 12] = factors 12]
+ensure.that: "factors.prime 12" [[2 2 3] = factors.prime 12]
+ensure.that: "gcd [24 36]" [12 = gcd [24 36]]
+ensure.that: "lcm [4 6]" [12 = lcm [4 6]]
+
+print "PASS numbers/chapter-overview"

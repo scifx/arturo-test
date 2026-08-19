@@ -18,3 +18,4 @@
 - 可安全整模块原样执行的官方示例已生成 `official-examples-smoke.art` 并纳入 `run-all.sh`。
 - 实战项目区在 `word-frequency` 之外新增 `vector-math`：官方 `module` 矢量库 + 3D 合力 / 三角形面积回归。
 - 模块化最小测试和经验包放在官方分区 `tests/modules/core/`。
+- 开始按官方网页 library 总章核对：`arithmetic` 已完成，`numbers` 总章已入库。
