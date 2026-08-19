@@ -16,4 +16,4 @@
 | 项目 | 说明 |
 |---|---|
 | `word-frequency/` | 从文本生成词频 dictionary 与 JSON 输出，覆盖 strings + collections + files 的组合用法。|
-| `vector-math/` | 可导入数值矢量模块：加减、点积、叉积、模长、单位矢量，并用 3D 合力 / 三角形面积做组合回归。|
+| `vector-math/` | 官方 `module` 数值矢量库：加减、点积、叉积、模长、单位矢量，并用 3D 合力 / 三角形面积做组合回归。模块化经验浓缩在 `tests/modules/core/经验.md`。|

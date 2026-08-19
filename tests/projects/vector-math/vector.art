@@ -1,146 +1,144 @@
-; Reusable numeric vector module.
-; Official-function focus: couple, map, fold, every?, hypot, sqrt, throw,
-; write.json (used by the importer), standalone?, function data comments.
+; Official-function focus: module, method.public, export, function,
+; couple, map, fold, hypot, throw, standalone?.
+;
+; Pattern from official `module` docs + agent-shell.art file import:
+;   - helpers live in the module as function
+;   - sibling calls use \name
+;   - only method.public is exported
+;   - do not name a public method add/sub; that shadows arithmetic
 ;
 ; Vectors are blocks of :integer / :floating. Do not write [-1 2]:
-; that block contains the symbol `-` plus two integers. Use @[neg 1 2].
+; that block contains the symbol `-`. Use @[neg 1 2].
 
-numericValue?: function [x][
-    or? integer? x floating? x
-]
-
-sameLength?: function [a :block b :block][
-    (size a) = size b
-]
-
-vecEnsure: function [a :block b :block][
-    unless sameLength? a b [
-        throw "vector size mismatch"
+vector: module [
+    numericValue?: function [x][
+        or? integer? x floating? x
     ]
-    unless every? a 'x [numericValue? x] [
-        throw "left vector is not numeric"
+
+    ensurePair: function [left :block right :block][
+        unless (size left) = size right [
+            throw "vector size mismatch"
+        ]
+        unless every? left 'x [\numericValue? x] [
+            throw "left vector is not numeric"
+        ]
+        unless every? right 'x [\numericValue? x] [
+            throw "right vector is not numeric"
+        ]
     ]
-    unless every? b 'x [numericValue? x] [
-        throw "right vector is not numeric"
+
+    ensureOne: function [v :block][
+        unless every? v 'x [\numericValue? x] [
+            throw "vector is not numeric"
+        ]
+    ]
+
+    pairAdd: function [pair][
+        (get pair 0) + get pair 1
+    ]
+
+    pairSub: function [pair][
+        (get pair 0) - get pair 1
+    ]
+
+    pairMul: function [pair][
+        (get pair 0) * get pair 1
+    ]
+
+    almostEqual?: function [x y][
+        0.0000001 > abs (x - y)
+    ]
+
+    vecAdd: method.public [left :block right :block][
+        \ensurePair left right
+        map couple left right 'p [
+            \pairAdd p
+        ]
+    ]
+
+    vecSub: method.public [left :block right :block][
+        \ensurePair left right
+        map couple left right 'p [
+            \pairSub p
+        ]
+    ]
+
+    vecScale: method.public [v :block k][
+        \ensureOne v
+        unless \numericValue? k [
+            throw "scale factor is not numeric"
+        ]
+        map v 'x [x * k]
+    ]
+
+    vecNeg: method.public [v :block][
+        \vecScale v neg 1
+    ]
+
+    vecDot: method.public [left :block right :block][
+        \ensurePair left right
+        fold.seed:0 couple left right [acc p][
+            acc + \pairMul p
+        ]
+    ]
+
+    vecMag: method.public [v :block][
+        \ensureOne v
+        (2 = size v)? [
+            hypot get v 0 get v 1
+        ] [
+            sqrt \vecDot v v
+        ]
+    ]
+
+    vecNormalize: method.public [v :block][
+        mag: \vecMag v
+        (0 = mag)? [
+            throw "cannot normalize a zero vector"
+        ] [
+            map v 'x [x // mag]
+        ]
+    ]
+
+    vecCross: method.public [left :block right :block][
+        unless and? (3 = size left) (3 = size right) [
+            throw "cross product needs two 3D vectors"
+        ]
+        \ensurePair left right
+        ax: get left 0
+        ay: get left 1
+        az: get left 2
+        bx: get right 0
+        by: get right 1
+        bz: get right 2
+        @[
+            (ay * bz) - (az * by)
+            (az * bx) - (ax * bz)
+            (ax * by) - (ay * bx)
+        ]
+    ]
+
+    vecDistance: method.public [left :block right :block][
+        \vecMag \vecSub left right
+    ]
+
+    vecAlmostEqual?: method.public [left :block right :block][
+        and? ((size left) = size right)
+             every? couple left right 'p [
+                \almostEqual? get p 0 get p 1
+             ]
     ]
 ]
 
-vecEnsureOne: function [v :block][
-    unless every? v 'x [numericValue? x] [
-        throw "vector is not numeric"
-    ]
-]
-
-vecAdd: function [a :block b :block][
-    ;; description: « add two numeric vectors element-wise
-    ;; returns: :block
-    ;; example: {
-    ;;      print vecAdd [1 2 3] [4 5 6]
-    ;; }
-    vecEnsure a b
-    map couple a b 'p [
-        (get p 0) + get p 1
-    ]
-]
-
-vecSub: function [a :block b :block][
-    ;; description: « subtract two numeric vectors element-wise
-    ;; returns: :block
-    vecEnsure a b
-    map couple a b 'p [
-        (get p 0) - get p 1
-    ]
-]
-
-vecScale: function [v :block k][
-    ;; description: « multiply every component by a scalar
-    ;; returns: :block
-    vecEnsureOne v
-    unless numericValue? k [
-        throw "scale factor is not numeric"
-    ]
-    map v 'x [x * k]
-]
-
-vecNeg: function [v :block][
-    ;; description: « negate every component
-    ;; returns: :block
-    vecScale v neg 1
-]
-
-vecDot: function [a :block b :block][
-    ;; description: « dot product of two numeric vectors
-    ;; returns: :integer :floating
-    vecEnsure a b
-    fold.seed:0 couple a b [acc p][
-        acc + ((get p 0) * get p 1)
-    ]
-]
-
-vecNorm2: function [v :block][
-    vecDot v v
-]
-
-vecMag: function [v :block][
-    ;; description: « Euclidean magnitude; hypot for 2D, sqrt of dot otherwise
-    ;; returns: :floating
-    vecEnsureOne v
-    (2 = size v)? [
-        hypot get v 0 get v 1
-    ] [
-        sqrt vecNorm2 v
-    ]
-]
-
-vecNormalize: function [v :block][
-    ;; description: « unit vector; uses // so components stay floating
-    ;; returns: :block
-    mag: vecMag v
-    (0 = mag)? [
-        throw "cannot normalize a zero vector"
-    ] [
-        map v 'x [x // mag]
-    ]
-]
-
-vecCross: function [a :block b :block][
-    ;; description: « 3D cross product
-    ;; returns: :block
-    unless and? (3 = size a) (3 = size b) [
-        throw "cross product needs two 3D vectors"
-    ]
-    vecEnsure a b
-    ax: get a 0
-    ay: get a 1
-    az: get a 2
-    bx: get b 0
-    by: get b 1
-    bz: get b 2
-    @[
-        (ay * bz) - (az * by)
-        (az * bx) - (ax * bz)
-        (ax * by) - (ay * bx)
-    ]
-]
-
-vecDistance: function [a :block b :block][
-    ;; description: « Euclidean distance between two points
-    ;; returns: :floating
-    vecMag vecSub a b
-]
-
-almostEqual?: function [x y][
-    0.0000001 > abs (x - y)
-]
-
-vecAlmostEqual?: function [a :block b :block][
-    and? sameLength? a b
-         every? couple a b 'p [
-            almostEqual? get p 0 get p 1
-         ]
-]
+export vector!
 
 if standalone? [
+    ensure.that: "module value stays bound" [(type vector) = :module]
+    ensure.that: "public method is exported" [set? 'vecAdd]
+    ensure.that: "private function is not exported" [not? set? 'ensurePair]
+    ensure.that: "private pairAdd is not exported" [not? set? 'pairAdd]
+    ensure.that: "exporting vecAdd does not shadow +" [3 = 1 + 2]
+
     ensure.that: "add pairs by couple order" [[5 7 9] = vecAdd [1 2 3] [4 5 6]]
     ensure.that: "sub is element-wise" [@[neg 3 neg 3 neg 3] = vecSub [1 2 3] [4 5 6]]
     ensure.that: "scale multiplies components" [[2 4 6] = vecScale [1 2 3] 2]
@@ -159,11 +157,6 @@ if standalone? [
     ensure.that: "zero vector cannot normalize" [throws? [vecNormalize [0 0]]]
     ensure.that: "2D cross throws" [throws? [vecCross [1 2] [3 4]]]
     ensure.that: "non-numeric vector throws" [throws? [vecAdd ["a" 1] [2 3]]]
-
-    meta: info.get 'vecAdd
-    ensure.that: "user function keeps ;; description" [
-        "add two numeric vectors element-wise" = meta\description
-    ]
 
     print "PASS projects/vector-math/lib"
 ]

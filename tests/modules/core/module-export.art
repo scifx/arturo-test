@@ -1,0 +1,27 @@
+; Module area: Core / module, method, export
+; Official-function focus: module, method.public, export, set?, function.
+; Source: official `info.get 'module` / `export` examples, plus the
+; vector-math project pattern: functions inside the module, public
+; surface only through method.public.
+
+box: module [
+    bang: function [s :string][
+        ~"|s|!"
+    ]
+
+    greet: method.public [name :string][
+        \bang ~"hi |name|"
+    ]
+]
+
+export box!
+
+ensure.that: "module value remains bound" [(type box) = :module]
+ensure.that: "public method is exported" [set? 'greet]
+ensure.that: "private function is not exported" [not? set? 'bang]
+ensure.that: "method calls sibling function with backslash" [
+    "hi Ada!" = greet "Ada"
+]
+ensure.that: "export does not remove the module itself" [set? 'box]
+
+print "PASS core/module-export"
