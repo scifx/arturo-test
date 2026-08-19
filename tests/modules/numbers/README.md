@@ -1,19 +1,19 @@
 # numbers 测试说明
 
-本分区对应 Arturo 官方库模块：`numbers`。
+对应官方库模块 [Numbers](https://arturo-lang.io/documentation/library/numbers)。
 
-## 当前状态
+网页总章有 CLI 没有的导读：常数（`epsilon` = e）、复数模/幅角、数论、三角。
 
-- 已建立分区骨架，等待从上游 skill 的 `info.get` 官方示例与实战代码中补充可验证用例。
-- 新增 `.art` 文件时，请在文件头部标明覆盖的官方函数，并使用 `ensure.that:` 写断言。
+## 测试文件
 
-## 建议流程
+| 文件 | 覆盖点 | 来源 |
+|---|---|---|
+| `chapter-overview.art` | 总章常数 / 对数取整 / hypot / angle / 数论 / sin(pi/6) | 官方网页总章 + 实测 |
 
-先按仓库根 README 手动准备或更新上游 skill，然后查询本模块相关函数：
+`info.get` 原始示例尚未整模块 smoke（部分函数、输出过大或 `angle` 历史 gap）。以 curated 章节测试为准。
+
+## 运行
 
 ```bash
-/tmp/arturo-language-skill/bin/ahelp -s numbers
 ./tests/run-all.sh
 ```
-
-如果 skill 放在其他位置，请用 `ARTURO_SKILL_DIR=...` 或 `ARTURO_BIN=...` 指定。

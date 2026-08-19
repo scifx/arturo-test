@@ -1,0 +1,127 @@
+; Vector package entry — Arturo analogue of Python __init__.py.
+; Official-function focus: module.with, init, method.public, export,
+; import.lean, this\name, standalone?.
+;
+; Helpers live in ops.art. This file only wraps them:
+;   - init does this\ops: import.lean ./{ops}!
+;   - calls use this\ops\pairAdd and this\vecScale
+;     (\name is shorthand for this\name; prefer this\name when writing)
+;   - only method.public is exported
+;   - do not name a public method add/sub; that shadows arithmetic
+
+vector: module.with: [] [
+    init: method [][
+        this\ops: import.lean ./{ops}!
+    ]
+
+    vecAdd: method.public [left :block right :block][
+        this\ops\ensurePair left right
+        map couple left right 'p [
+            this\ops\pairAdd p
+        ]
+    ]
+
+    vecSub: method.public [left :block right :block][
+        this\ops\ensurePair left right
+        map couple left right 'p [
+            this\ops\pairSub p
+        ]
+    ]
+
+    vecScale: method.public [v :block k][
+        this\ops\ensureOne v
+        unless (this\ops\numericValue? k) [
+            throw "scale factor is not numeric"
+        ]
+        map v 'x [x * k]
+    ]
+
+    vecNeg: method.public [v :block][
+        this\vecScale v neg 1
+    ]
+
+    vecDot: method.public [left :block right :block][
+        this\ops\ensurePair left right
+        fold.seed:0 couple left right [acc p][
+            acc + (this\ops\pairMul p)
+        ]
+    ]
+
+    vecMag: method.public [v :block][
+        this\ops\ensureOne v
+        (2 = size v)? [
+            hypot get v 0 get v 1
+        ] [
+            sqrt this\vecDot v v
+        ]
+    ]
+
+    vecNormalize: method.public [v :block][
+        mag: this\vecMag v
+        (0 = mag)? [
+            throw "cannot normalize a zero vector"
+        ] [
+            map v 'x [x // mag]
+        ]
+    ]
+
+    vecCross: method.public [left :block right :block][
+        unless and? (3 = size left) (3 = size right) [
+            throw "cross product needs two 3D vectors"
+        ]
+        this\ops\ensurePair left right
+        ax: get left 0
+        ay: get left 1
+        az: get left 2
+        bx: get right 0
+        by: get right 1
+        bz: get right 2
+        @[
+            (ay * bz) - (az * by)
+            (az * bx) - (ax * bz)
+            (ax * by) - (ay * bx)
+        ]
+    ]
+
+    vecDistance: method.public [left :block right :block][
+        this\vecMag this\vecSub left right
+    ]
+
+    vecAlmostEqual?: method.public [left :block right :block][
+        and? ((size left) = size right)
+             every? couple left right 'p [
+                this\ops\almostEqual? get p 0 get p 1
+             ]
+    ]
+]
+
+export vector!
+
+if standalone? [
+    ensure.that: "module value stays bound" [(type vector) = :module]
+    ensure.that: "public method is exported" [set? 'vecAdd]
+    ensure.that: "ops helpers are not file-global" [not? set? 'pairAdd]
+    ensure.that: "lean submodule is not file-global" [not? set? 'ops]
+    ensure.that: "exporting vecAdd does not shadow +" [3 = 1 + 2]
+
+    ensure.that: "add pairs by couple order" [[5 7 9] = vecAdd [1 2 3] [4 5 6]]
+    ensure.that: "sub is element-wise" [@[neg 3 neg 3 neg 3] = vecSub [1 2 3] [4 5 6]]
+    ensure.that: "scale multiplies components" [[2 4 6] = vecScale [1 2 3] 2]
+    ensure.that: "neg flips sign" [@[neg 1 neg 2 neg 3] = vecNeg [1 2 3]]
+    ensure.that: "dot of 123 and 456" [32 = vecDot [1 2 3] [4 5 6]]
+    ensure.that: "2D magnitude uses hypot" [5.0 = vecMag [3 4]]
+    ensure.that: "3D magnitude uses sqrt of norm2" [3.0 = vecMag [1 2 2]]
+    ensure.that: "normalize 3-4" [vecAlmostEqual? [0.6 0.8] vecNormalize [3 4]]
+    ensure.that: "i cross j is k" [[0 0 1] = vecCross [1 0 0] [0 1 0]]
+    ensure.that: "cross 123 x 456" [@[neg 3 6 neg 3] = vecCross [1 2 3] [4 5 6]]
+    ensure.that: "distance of 3-4-5" [5.0 = vecDistance [0 0] [3 4]]
+    ensure.that: "negative components via evaluated block" [
+        [0 0] = vecAdd @[neg 1 2] @[1 neg 2]
+    ]
+    ensure.that: "size mismatch throws" [throws? [vecAdd [1 2] [1]]]
+    ensure.that: "zero vector cannot normalize" [throws? [vecNormalize [0 0]]]
+    ensure.that: "2D cross throws" [throws? [vecCross [1 2] [3 4]]]
+    ensure.that: "non-numeric vector throws" [throws? [vecAdd ["a" 1] [2 3]]]
+
+    print "PASS projects/vector-math/lib"
+]

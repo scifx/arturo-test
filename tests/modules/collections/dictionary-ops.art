@@ -1,0 +1,96 @@
+; Module area: Collections / dictionaries
+; Source: official collections chapter + info.get, verified on runtime.
+; Focus: get/set/key?, contains? vs key?, dynamic keys, extend copy,
+; dictionary.with, #.lower, remove.key, nested select.
+
+user: #[
+    name: "John"
+    age: 30
+    city: "London"
+]
+
+ensure.that: "path field" ["John" = user\name]
+ensure.that: "get literal key" ["John" = get user 'name]
+ensure.that: "get string key" ["John" = get user "name"]
+dyn: "name"
+ensure.that: "get dynamic string" ["John" = get user dyn]
+ensure.that: "user\\w does not use variable w" [throws? [user\w]]
+ensure.that: "dynamic path user\\[dyn]" ["John" = user\[dyn]]
+
+ensure.that: "key? literal" [key? user 'name]
+ensure.that: "key? string" [key? user "name"]
+ensure.that: "key? missing" [not? key? user 'nope]
+ensure.that: "contains? looks at values" [contains? user "John"]
+ensure.that: "contains? does not look at key names" [not? contains? user "name"]
+ensure.that: "in? value in dict values" [in? "John" user]
+ensure.that: "in? key needs keys" [in? "name" keys user]
+ensure.that: "contains?.deep nested value" [
+    contains?.deep #[mom: #[name: "Jane"]] "Jane"
+]
+
+set user dyn "Jane"
+ensure.that: "set via dynamic string key" ["Jane" = get user "name"]
+set user 'age 31
+ensure.that: "set via literal key" [31 = get user 'age]
+
+freq: #[]
+loop ["a" "b" "a"] 'w [
+    current: (key? freq w)? [get freq w] [0]
+    set freq w (current + 1)
+]
+ensure.that: "tally-style dynamic count a" [2 = get freq "a"]
+ensure.that: "tally-style dynamic count b" [1 = get freq "b"]
+
+t: tally "hello"
+ensure.that: "tally l count via string key" [2 = get t "l"]
+
+entity: "EU"
+location: dictionary.with: [entity][
+    country: "Spain"
+]
+ensure.that: "dictionary.with captures entity" ["EU" = location\entity]
+ensure.that: "dictionary.with own field" ["Spain" = location\country]
+
+low: #.lower [
+    Name: "John"
+    AGE: 35
+]
+ensure.that: "lowercased keys" [key? low "name"]
+ensure.that: "lowercased AGE" [35 = get low "age"]
+
+person: #[name: "john"]
+more: extend person #[age: 35]
+set more 'name "jane"
+ensure.that: "extend does not alias the original" ["john" = person\name]
+ensure.that: "extend result is independent" ["jane" = more\name]
+ensure.that: "extend copied age" [35 = more\age]
+
+trimmed: remove.key #[name: "John" surname: "Doe"] "surname"
+ensure.that: "remove.key drops surname" [not? key? trimmed "surname"]
+ensure.that: "remove.key keeps name" ["John" = get trimmed "name"]
+
+errIns: try [insert 'user 'city "Paris"]
+ensure.that: "insert dict with literal key throws" [error? errIns]
+insert 'user "extra" "ok"
+ensure.that: "insert dict with string key works" ["ok" = get user "extra"]
+
+users: #[
+    active: @[
+        #[name: "John" score: 42 tags: ["admin" "dev"]]
+        #[name: "Alice" score: 28 tags: ["dev"]]
+        #[name: "Bob" score: 35 tags: ["admin"]]
+    ]
+]
+admins: select users\active 'u [
+    and? (contains? u\tags "admin") (u\score > 40)
+]
+ensure.that: "nested select admin score>40" [["John"] = map admins 'u [u\name]]
+ensure.that: "unique flatten tags" [
+    ["admin" "dev"] = unique flatten map users\active 'u [u\tags]
+]
+
+ensure.that: "keys order insertion" [["name" "age" "city" "extra"] = keys user]
+ensure.that: "size of two-key dict" [2 = size #[a: 1 b: 2]]
+ensure.that: "empty? #[]" [empty? #[]]
+
+print "PASS collections/dictionary-ops"

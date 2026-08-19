@@ -1,0 +1,35 @@
+; Module area: Types
+; Source: https://arturo-lang.io/documentation/library/types
+; Verified: type predicates, to conversions, define + string method.
+
+ensure.that: "type 42" [:integer = type 42]
+ensure.that: "type hello" [:string = type "hello"]
+ensure.that: "type block" [:block = type [1 2 3]]
+ensure.that: "integer?" [integer? 42]
+ensure.that: "string? 42 is false" [not? string? 42]
+ensure.that: "is? :integer" [is? :integer 42]
+ensure.that: "is? :string" [is? :string "hi"]
+ensure.that: "to string 42" ["42" = to :string 42]
+ensure.that: "to integer string" [42 = to :integer "42"]
+ensure.that: "to floating string" [3.14 = to :floating "3.14"]
+
+d: to :date .format: "yyyy-MM-dd" "2024-01-15"
+ensure.that: "to date.format year" [2024 = d\year]
+ensure.that: "date?" [date? d]
+
+define :person [
+    init: method [name age][
+        this\name: name
+        this\age: age
+    ]
+    string: method [][
+        ~"|this\name| (|this\age| years old)"
+    ]
+]
+john: to :person ["John" 38]!
+ensure.that: "custom type string method" [
+    "John (38 years old)" = to :string john
+]
+ensure.that: "object field" ["John" = john\name]
+
+print "PASS types/chapter-overview"

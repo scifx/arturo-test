@@ -1,0 +1,26 @@
+; Module area: Core / module scope
+; Official-function focus: module.with, init, import.lean, this\name.
+; \name is shorthand for this\name — write this\name for calls and
+; field assigns. Outside helpers + init import.lean ≈ Python __init__.py.
+
+box: module.with: [] [
+    init: method [][
+        this\helpers: import.lean ./{module-helpers}!
+    ]
+
+    greet: method.public [name :string][
+        msg: ~"hi |name|"
+        this\helpers\bang msg
+    ]
+]
+
+export box!
+
+ensure.that: "init import.lean is available via this\\helpers" [
+    "hi Ada!" = greet "Ada"
+]
+ensure.that: "lean helpers do not leak to file scope" [not? set? 'bang]
+ensure.that: "lean binding stays on the module" [not? set? 'helpers]
+ensure.that: "module value remains bound" [(type box) = :module]
+
+print "PASS core/module-scope-import"

@@ -1,0 +1,32 @@
+; Module area: Iterators
+; Source: https://arturo-lang.io/documentation/library/iterators
+
+ensure.that: "map double" [[2 4 6 8 10] = map 1..5 'x [x * 2]]
+ensure.that: "map => square" [[1 4 9 16 25] = map 1..5 => [& ^ 2]]
+ensure.that: "select evens" [[2 4 6 8 10] = select 1..10 'n [even? n]]
+ensure.that: "filter evens keeps odds" [[1 3 5 7 9] = filter 1..10 'n [even? n]]
+ensure.that: "every? evens" [every? [2 4 6 8] => even?]
+ensure.that: "some? > 10 on small evens" [not? some? [2 4 6 8] => [& > 10]]
+ensure.that: "enumerate x>5 on [2 4 6 8] is 2 not 3" [
+    2 = enumerate [2 4 6 8] 'x [x > 5]
+]
+ensure.that: "fold 1..5 sums to 15" [15 = fold 1..5 [acc val][acc + val]]
+ensure.that: "fold.seed:100" [115 = fold.seed: 100 1..5 [acc val][acc + val]]
+grouped: gather ["apple" "banana" "apricot" "cherry"] 'word [first word]
+ensure.that: "gather apple/apricot under a" [
+    ["apple" "apricot"] = get grouped "a"
+]
+ensure.that: "gather banana under b" [
+    ["banana"] = get grouped "b"
+]
+ensure.that: "collect while x<4 keeps later 2" [
+    [1 2 3 2] = collect [1 2 3 2 4 5] 'x [x < 4]
+]
+ensure.that: "cluster equal runs" [
+    [[22 22] [23] [25 25 25] [24 24]] = cluster [22 22 23 25 25 25 24 24] 'temp [temp]
+]
+ensure.that: "chunk by <3" [
+    [[1 2] [3 4 5 6]] = chunk 1..6 => [& < 3]
+]
+
+print "PASS iterators/chapter-overview"

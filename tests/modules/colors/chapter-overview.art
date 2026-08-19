@@ -1,0 +1,33 @@
+; Module area: Colors
+; Source: https://arturo-lang.io/documentation/library/colors
+; Official-function focus: #hex #names extract darken lighten saturate
+; desaturate blend invert palette to :color .hsv
+
+ensure.that: "short hex #f00 is red" [#FF0000 = #f00]
+ensure.that: "named #red" [#FF0000 = #red]
+ensure.that: "extract.red" [255 = extract.red #ff0000]
+ensure.that: "extract.green" [255 = extract.green #00ff00]
+ensure.that: "darken red 0.3" [#B20000 = darken #red 0.3]
+ensure.that: "lighten emerald 0.2" [#60F090 = lighten #emerald 0.2]
+ensure.that: "saturate green 0.4 stays #008000" [#008000 = saturate #green 0.4]
+ensure.that: "desaturate green 0.4" [#1A661A = desaturate #green 0.4]
+ensure.that: "blend red blue is purple" [#800080 = blend #red #blue]
+ensure.that: "blend.balance 0.7" [#4D00B3 = blend.balance: 0.7 #red #blue]
+ensure.that: "invert red is cyan" [#00FFFF = invert #red]
+ensure.that: "chapter invert #white is NOT black on this runtime" [
+    not? (#000000 = invert #white)
+]
+ensure.that: "invert #white stays white here" [#FFFFFF = invert #white]
+
+hsl: extract.hsl #magenta
+ensure.that: "hsl hue of magenta" [300 = hsl\hue]
+hsv: extract.hsv #magenta
+ensure.that: "hsv value of magenta" [1.0 = hsv\value]
+ensure.that: "to color .hsv rebuilds magenta" [
+    #FF00FF = to :color .hsv [300 1.0 1.0]
+]
+ensure.that: "palette.triad royal blue" [
+    [#4169E1 #E14169 #69E141] = palette.triad #4169e1
+]
+
+print "PASS colors/chapter-overview"

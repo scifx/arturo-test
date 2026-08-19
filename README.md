@@ -133,7 +133,7 @@ tests/projects/<project-name>/
   <project>.art
 ```
 
-项目示例应覆盖多模块组合场景，例如文本处理 + dictionary + JSON、HTTP + JSON、CLI + 文件等。
+项目示例应覆盖多模块组合场景，例如文本处理 + dictionary + JSON、本地 `import` 模块 + 数值计算、HTTP + JSON、CLI + 文件等。
 
 ## 变更记录与当日报告
 

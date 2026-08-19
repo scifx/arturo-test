@@ -1,0 +1,71 @@
+; Module area: Arithmetic
+; Source: https://arturo-lang.io/documentation/library/arithmetic
+; (module overview — not available from CLI info.get)
+; Official-function focus: add + sub - mul * div / fdiv // inc dec
+; divmod /% mod % pow ^ neg, plus type promotion and quantities.
+
+ensure.that: "infix + matches add" [(2 + 3) = add 2 3]
+ensure.that: "infix - matches sub" [(5 - 3) = sub 5 3]
+ensure.that: "infix * matches mul" [(4 * 3) = mul 4 3]
+ensure.that: "integer / truncates" [3 = 10 / 3]
+ensure.that: "integer / is div" [(10 / 3) = div 10 3]
+ensure.that: "integer // is floating" [floating? 10 // 3]
+ensure.that: "integer // matches fdiv" [(10 // 3) = fdiv 10 3]
+ensure.that: "3 / 5 is zero" [0 = 3 / 5]
+ensure.that: "3 // 5 is 0.6" [0.6 = 3 // 5]
+
+ensure.that: "int + float promotes" [floating? 2 + 3.81]
+ensure.that: "int * float promotes" [7.0 = 2 * 3.5]
+ensure.that: "1:2 is rational half" [rational? 1:2]
+ensure.that: "rational add from chapter" [(1:2 + 3:4) = 5:4]
+ensure.that: "int + rational promotes" [(3 + 1:2) = 7:2]
+ensure.that: "2 3:4 is int plus leftover rational, not 3/2" [
+    and? (2 = get [2 3:4] 0) (rational? get [2 3:4] 1)
+]
+ensure.that: "2 * 3:4 is the 3/2 in the chapter" [(2 * 3:4) = 3:2]
+
+z: to :complex [3 4]
+ensure.that: "complex add scalar" [(z + 2) = to :complex [5 4]]
+ensure.that: "complex mul scalar" [(z * 3) = to :complex [9 12]]
+ensure.that: "int + complex promotes" [
+    (2 + to :complex [1 1]) = to :complex [3 1]
+]
+
+x: 5
+inc 'x
+ensure.that: "inc literal" [x = 6]
+dec 'x
+ensure.that: "dec literal" [x = 5]
+add 'x 3
+mul 'x 2
+ensure.that: "chained in-place add/mul" [x = 16]
+n: 5
+ensure.that: "inc without literal returns new value" [6 = inc n]
+ensure.that: "inc without literal leaves binding" [5 = n]
+
+[quotient remainder]: divmod 17 5
+ensure.that: "divmod quotient" [3 = quotient]
+ensure.that: "divmod remainder" [2 = remainder]
+ensure.that: "infix /% unpacks" [
+    [q r]: 10 /% 3
+    and? (3 = q) (1 = r)
+]
+
+ensure.that: "quantity + amount adds the number" [(3`m + 10) = 13`m]
+ensure.that: "chapter comment 3`m + 10 => 3m is wrong" [not? ((3`m + 10) = 3`m)]
+ensure.that: "quantity - amount" [(3`m - 2) = 1`m]
+ensure.that: "quantity * times" [(3`km * 3) = 9`km]
+ensure.that: "times * quantity" [(3 * 3`km) = 9`km]
+ensure.that: "quantity * quantity is area" [(2`m * 3`m) = 6`m2]
+ensure.that: "fdiv quantities is speed" [(fdiv 100`m 5`s) = 20`m/s]
+
+ensure.that: "right-to-left 2+3*5 happens to be 17" [17 = 2 + 3 * 5]
+ensure.that: "right-to-left 3*5+2 is 21 not 17" [21 = 3 * 5 + 2]
+ensure.that: "parenthesized product then add" [17 = (3 * 5) + 2]
+
+ensure.that: "pow infix" [8 = 2 ^ 3]
+ensure.that: "neg quantity flips sign" [(neg 3`m) = (3`m * neg 1)]
+ensure.that: "color add mixes channels" [(#FF0000 + #0000FF) = #FF00FF]
+ensure.that: "negative integer div truncates toward -inf or zero" [(neg 2) = (neg 5) / 2]
+
+print "PASS arithmetic/chapter-overview"

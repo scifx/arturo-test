@@ -16,3 +16,4 @@
 | 项目 | 说明 |
 |---|---|
 | `word-frequency/` | 从文本生成词频 dictionary 与 JSON 输出，覆盖 strings + collections + files 的组合用法。|
+| `vector-math/` | 官方 `module` 矢量包（`ops.art` + `vector.art` 当 `__init__.py`）。模块化经验在 `tests/modules/core/经验.md`。|

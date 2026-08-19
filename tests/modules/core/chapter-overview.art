@@ -1,0 +1,33 @@
+; Module area: Core
+; Source: https://arturo-lang.io/documentation/library/core
+
+x: 5
+ensure.that: "basic assignment" [5 = x]
+[a b c]: [1 2 3]
+ensure.that: "block unpack" [and? (1 = a) (and? (2 = b) (3 = c))]
+
+two?: (2 = 2)? -> "yes" -> "no"
+ensure.that: "switch-like ?" ["yes" = two?]
+
+picked: case 2 [
+    1 -> "one"
+    2 -> "two"
+    any -> "other"
+]
+ensure.that: "case match" ["two" = picked]
+
+w: "unset"
+when [
+    1 = 2 -> w: "no"
+    true -> w: "default"
+]
+ensure.that: "when default" ["default" = w]
+
+ensure.that: "coalesce ?? " ["default" = (null ?? "default")]
+ensure.that: "set?" [set? 'x]
+ensure.that: "null?" [null? null]
+
+double: $[n][n * 2]
+ensure.that: "function $" [10 = double 5]
+
+print "PASS core/chapter-overview"

@@ -1,0 +1,53 @@
+; Private helpers for the vector package.
+; Loaded with import.lean from vector.art's init — like a Python submodule.
+; Each function is self-contained: lean import isolates sibling names.
+
+numericValue?: function [x][
+    or? integer? x floating? x
+]
+
+ensurePair: function [left :block right :block][
+    unless ((size left) = size right) [
+        throw "vector size mismatch"
+    ]
+    unless every? left 'x [or? integer? x floating? x] [
+        throw "left vector is not numeric"
+    ]
+    unless every? right 'x [or? integer? x floating? x] [
+        throw "right vector is not numeric"
+    ]
+]
+
+ensureOne: function [v :block][
+    unless every? v 'x [or? integer? x floating? x] [
+        throw "vector is not numeric"
+    ]
+]
+
+pairAdd: function [pair][
+    (get pair 0) + get pair 1
+]
+
+pairSub: function [pair][
+    (get pair 0) - get pair 1
+]
+
+pairMul: function [pair][
+    (get pair 0) * get pair 1
+]
+
+almostEqual?: function [x y][
+    0.0000001 > abs (x - y)
+]
+
+if standalone? [
+    ensure.that: "pairAdd is element-wise" [7 = pairAdd [3 4]]
+    ensure.that: "pairSub is element-wise" [(neg 1) = pairSub [3 4]]
+    ensure.that: "ensurePair accepts equal numeric blocks" [
+        not? throws? [ensurePair [1 2] [3 4]]
+    ]
+    ensure.that: "ensurePair rejects size mismatch" [
+        throws? [ensurePair [1 2] [3]]
+    ]
+    print "PASS projects/vector-math/ops"
+]

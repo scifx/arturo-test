@@ -1,14 +1,14 @@
-# Collections 测试说明
+# collections 测试说明
 
-本分区验证 block 与 dictionary 的常见写法，优先覆盖 agent 生成 Arturo 时高频使用的数据结构操作。
+对应 [Collections](https://arturo-lang.io/documentation/library/collections)。  
+数组（block）和字典都在这一章，必须分开测透。
 
-## 测试文件
-
-| 文件 | 覆盖点 | 来源 |
-|---|---|---|
-| `dictionary-and-mutation.art` | `sort 'xs` 就地排序、`append 'xs` 就地追加、`loop`、动态 key 的 `key?`/`get`/`set` | 官方函数签名 + skill 指针模型 |
-
-## 运行
+| 文件 | 覆盖 |
+|---|---|
+| `chapter-overview.art` | 总章：`++`、下标、contains?/key?、range |
+| `dictionary-and-mutation.art` | sort/append 原地改、词频 get/set |
+| `block-ops.art` | 别名/`new`、couple、chop/drop/take/pop、split/slice、rotate |
+| `dictionary-ops.art` | 动态键、extend 拷贝、dictionary.with、嵌套 select |
 
 ```bash
 ./tests/run-all.sh

@@ -1,0 +1,33 @@
+; Module area: Sets
+; Source: https://arturo-lang.io/documentation/library/sets
+; Official-function focus: union intersection difference powerset
+; subset? superset? intersect? disjoint? difference.symmetric
+
+A: [1 2 3 4]
+B: [3 4 5 6]
+ensure.that: "union" [[1 2 3 4 5 6] = union A B]
+ensure.that: "intersection" [[3 4] = intersection A B]
+ensure.that: "difference A-B" [[1 2] = difference A B]
+ensure.that: "symmetric difference" [[1 2 5 6] = difference.symmetric A B]
+
+X: [1 2 3]
+Y: [1 2 3 4]
+ensure.that: "subset?" [subset? X Y]
+ensure.that: "proper subset" [subset?.proper X Y]
+ensure.that: "superset?" [superset? Y X]
+ensure.that: "intersect?" [intersect? X Y]
+ensure.that: "disjoint? of overlapping is false" [not? disjoint? X Y]
+
+ensure.that: "powerset of 3" [
+    [[] [1] [2] [1 2] [3] [1 3] [2 3] [1 2 3]] = powerset [1 2 3]
+]
+
+sets: [[1 2] [2 3] [3 4]]
+ensure.that: "fold intersection of three sets is empty" [
+    [] = fold sets => intersection
+]
+ensure.that: "fold union of three sets" [
+    [1 2 3 4] = fold sets => union
+]
+
+print "PASS sets/chapter-overview"

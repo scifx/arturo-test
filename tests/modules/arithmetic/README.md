@@ -1,19 +1,18 @@
 # arithmetic 测试说明
 
-本分区对应 Arturo 官方库模块：`arithmetic`。
+对应官方库模块 [Arithmetic](https://arturo-lang.io/documentation/library/arithmetic)。
 
-## 当前状态
+网页总章有 CLI `info` 没有的导读：类型提升、原地修改、有理数 `1:2`、quantity 运算。
 
-- 已建立分区骨架，等待从上游 skill 的 `info.get` 官方示例与实战代码中补充可验证用例。
-- 新增 `.art` 文件时，请在文件头部标明覆盖的官方函数，并使用 `ensure.that:` 写断言。
+## 测试文件
 
-## 建议流程
+| 文件 | 覆盖点 | 来源 |
+|---|---|---|
+| `official-examples-smoke.art` | 11 个函数的 `info.get` 原始示例 | 上游 runtime |
+| `chapter-overview.art` | 总章 Basic Usage / Common Patterns / 文档错误对照 | 官方网页总章 + 实测 |
 
-先按仓库根 README 手动准备或更新上游 skill，然后查询本模块相关函数：
+## 运行
 
 ```bash
-/tmp/arturo-language-skill/bin/ahelp -s arithmetic
 ./tests/run-all.sh
 ```
-
-如果 skill 放在其他位置，请用 `ARTURO_SKILL_DIR=...` 或 `ARTURO_BIN=...` 指定。

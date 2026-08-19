@@ -1,0 +1,54 @@
+; Practical project: 3D force and triangle report.
+; Combines a local imported module with arithmetic, numbers, iterators,
+; collections, exceptions, JSON, and user-function info.get metadata.
+
+import ./{vector}!
+
+f1: [3 4 0]
+f2: [0 0 12]
+resultant: vecAdd f1 f2
+resultantMag: vecMag resultant
+direction: vecNormalize [3 4]
+
+origin: [0 0 0]
+pointB: [3 0 0]
+pointC: [0 4 0]
+sideAB: vecSub pointB origin
+sideAC: vecSub pointC origin
+normal: vecCross sideAB sideAC
+area: (vecMag normal) // 2
+
+report: #[
+    forces: #[
+        first: f1
+        second: f2
+        resultant: resultant
+        magnitude: resultantMag
+    ]
+    direction2d: direction
+    triangle: #[
+        ab: sideAB
+        ac: sideAC
+        normal: normal
+        area: area
+    ]
+]
+
+json: write.json report null
+roundtrip: read.json json
+
+ensure.that: "resultant of 3-4-0 and 0-0-12" [[3 4 12] = roundtrip\forces\resultant]
+ensure.that: "5-12-13 magnitude" [13.0 = roundtrip\forces\magnitude]
+ensure.that: "2D unit direction of 3-4" [vecAlmostEqual? [0.6 0.8] roundtrip\direction2d]
+ensure.that: "triangle sides" [
+    and? ([3 0 0] = roundtrip\triangle\ab)
+         ([0 4 0] = roundtrip\triangle\ac)
+]
+ensure.that: "triangle normal is 2D cross as z" [[0 0 12] = roundtrip\triangle\normal]
+ensure.that: "triangle area is half the parallelogram" [6.0 = roundtrip\triangle\area]
+ensure.that: "distance origin to 3-4" [5.0 = vecDistance [0 0] [3 4]]
+ensure.that: "imported mismatch still throws" [throws? [vecAdd [1 2] [1]]]
+ensure.that: "package helpers stay off the caller scope" [not? set? 'pairAdd]
+ensure.that: "lean ops binding stays off the caller scope" [not? set? 'ops]
+
+print "PASS projects/vector-math"

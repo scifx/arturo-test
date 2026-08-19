@@ -1,14 +1,11 @@
-# Strings 测试说明
+# strings 测试说明
 
-本分区验证文本处理与正则写法。
+对应 [Strings](https://arturo-lang.io/documentation/library/strings)。
 
-## 测试文件
-
-| 文件 | 覆盖点 | 来源 |
-|---|---|---|
-| `text-and-regex.art` | `lower`、`upper`、`split.words`、`replace`、`match.once`、`{/.../}` 正则字面量 | 官方函数签名 + skill 已验证正则经验 |
-
-## 运行
+| 文件 | 来源 |
+|---|---|
+| `text-and-regex.art` | curated |
+| `chapter-overview.art` | 网页总章 |
 
 ```bash
 ./tests/run-all.sh
