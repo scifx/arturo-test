@@ -1,0 +1,23 @@
+; Module area: Quantities
+; Source: https://arturo-lang.io/documentation/library/quantities
+; No live currency conversion.
+
+ensure.that: "length?" [length? 3`m]
+ensure.that: "area? of m*m" [area? 2`m * 3`m]
+ensure.that: "speed? of m/s" [speed? fdiv 100`m 5`s]
+ensure.that: "convert 5km to m" [(5`km --> `m) = 5000`m]
+ensure.that: "90 km/h to m/s" [(90`km/h --> `m/s) = 25`m/s]
+ensure.that: "25 degC to degF" [(25`degC --> `degF) = 77`degF]
+ensure.that: "compatible add after convert" [
+    ((5`m) + (3`km --> `m)) = 3005`m
+]
+ensure.that: "km/h * h is km" [((100`km/h) * 2.5`h) = 250`km]
+ensure.that: "V * A is V·A" [((220`V) * 5`A) = 1100`V.A]
+ensure.that: "property of 5m is literal length" [
+    "length" = to :string property 5`m
+]
+ensure.that: "scalar of 3m" [3 = scalar 3`m]
+ensure.that: "conforms? m and cm" [conforms? 3`m 10`cm]
+ensure.that: "1 N equals 1 kg m/s2" [(1`N) = 1`kg.m/s2]
+
+print "PASS quantities/chapter-overview"

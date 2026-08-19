@@ -1,0 +1,50 @@
+; Module area: Collections
+; Source: https://arturo-lang.io/documentation/library/collections
+
+ensure.that: "evaluate range with @" [[2 3 4 5] = @2..5]
+
+lst: [1 2 3]
+'lst ++ 4
+'lst -- 2
+'lst ++ [5 6]
+ensure.that: "in-place ++ -- ++ block" [[1 3 4 5 6] = lst]
+ensure.that: "first" [1 = first lst]
+ensure.that: "last" [6 = last lst]
+ensure.that: "zero-based lst\\2 is third item 4" [4 = lst\2]
+
+colors: ["red" "green" "blue"]
+pos: 1
+ensure.that: "colors\\0" ["red" = colors\0]
+ensure.that: "dynamic index colors\\[pos]" ["green" = colors\[pos]]
+
+user: #[
+    name: "John"
+    age: 30
+    city: "London"
+]
+ensure.that: "user\\name" ["John" = user\name]
+field: 'age
+ensure.that: "dynamic field user\\[field]" [30 = user\[field]]
+ensure.that: "contains? dict checks values" [contains? user "John"]
+ensure.that: "key? checks keys" [key? user 'name]
+ensure.that: "contains? dict does not look up the key name" [not? contains? user 'name]
+
+data: [1 2 2 3 3 3]
+ensure.that: "size" [6 = size data]
+ensure.that: "index of 3 is 3 not 2" [3 = index data 3]
+ensure.that: "flatten" [[1 2 3 4 5 6] = flatten [[1 2] [3 4] [5 6]]]
+ensure.that: "unique" [[1 2 3] = unique [1 2 2 3 3 3]]
+ensure.that: "reverse" [[3 2 1] = reverse [1 2 3]]
+ensure.that: "combine.by:2" [[[1 2] [1 3] [2 3]] = combine.by: 2 [1 2 3]]
+ensure.that: "permutate count" [6 = size permutate [1 2 3]]
+
+nums: 1..1000
+ensure.that: "range first" [1 = first nums]
+ensure.that: "range last" [1000 = last nums]
+ensure.that: "range\\42 is 43 because index is zero-based" [43 = nums\42]
+
+text: "Hello 世界"
+ensure.that: "unicode size is characters" [8 = size text]
+ensure.that: "text\\6 is 世" ["世" = to :string text\6]
+
+print "PASS collections/chapter-overview"

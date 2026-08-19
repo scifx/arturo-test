@@ -1,0 +1,12 @@
+; Module area: Exceptions
+; Source: https://arturo-lang.io/documentation/library/exceptions
+
+err: try [discard 10 / 0]
+ensure.that: "try division by zero is an error" [error? err]
+ensure.that: "throws? on 10 / 0" [throws? [discard 10 / 0]]
+ensure.that: "throws? false on 10 / 2" [not? throws? [discard 10 / 2]]
+
+err2: try [throw "boom"]
+ensure.that: "throw is catchable by try" [error? err2]
+
+print "PASS exceptions/chapter-overview"

@@ -37,8 +37,8 @@
   - `quantities`
   - `sets`
   - `statistics`
-- 总章核对续：`paths` `crypto` `strings` `types` `files` `system` `reflection` `iterators`。源码负数统一 `neg N`。
-- `./tests/run-all.sh` 当前跑通 41 个 `.art` 测试文件。
+- 总章续：`collections` `core` `exceptions` `io` `quantities`。区分 bitwise `and` 与 logic `and?`。
+- `./tests/run-all.sh` 当前跑通 46 个 `.art` 测试文件。
 
 ### 约定调整
 

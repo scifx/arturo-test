@@ -1,0 +1,9 @@
+; Module area: Io
+; Source: https://arturo-lang.io/documentation/library/io
+; No input / cursor / clear / goto — those need a real terminal session.
+
+ensure.that: "terminal width is integer" [integer? terminal\width]
+ensure.that: "terminal height is integer" [integer? terminal\height]
+ensure.that: "color returns a string" [string? color #red "Error!"]
+
+print "PASS io/chapter-overview"
