@@ -38,7 +38,8 @@
   - `sets`
   - `statistics`
 - 总章续：`collections` `core` `exceptions` `io` `quantities`。区分 bitwise `and` 与 logic `and?`。
-- `./tests/run-all.sh` 当前跑通 46 个 `.art` 测试文件。
+- Collections 全量：新增 `block-ops.art`、`dictionary-ops.art`。
+- `./tests/run-all.sh` 当前跑通 48 个 `.art` 测试文件。
 
 ### 约定调整
 
