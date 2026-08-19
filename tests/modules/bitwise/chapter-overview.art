@@ -18,13 +18,13 @@ ensure.that: "xnor 12 9" [(neg 6) = xnor a b]
 num: 8
 ensure.that: "shl 8 2 is *4" [32 = shl num 2]
 ensure.that: "shr 8 1 is /2" [4 = shr num 1]
-ensure.that: "bit 3 of 42 is set" [8 = and 42 shl 1 3]
+ensure.that: "bit 3 of 42 is set" [8 = and 42 (shl 1 3)]
 
 number: 10
 pos: 2
-number: or number shl 1 pos
+number: or number (shl 1 pos)
 ensure.that: "set bit 2 of 10 via chapter pattern" [14 = number]
-number: and number not shl 1 pos
+number: and number (not shl 1 pos)
 ensure.that: "clear bit 2 via chapter pattern" [10 = number]
 
 ensure.that: "bitwise and is not logic and?" [1 = and 5 3]

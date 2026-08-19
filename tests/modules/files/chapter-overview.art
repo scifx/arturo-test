@@ -1,0 +1,26 @@
+; Module area: Files
+; Source: https://arturo-lang.io/documentation/library/files
+; Local-only: no URL reads.
+
+p: "/tmp/arturo-chapter-files.txt"
+if exists? p [ delete p ]
+
+write "hello-chapter" p
+ensure.that: "exists? after write" [exists? p]
+ensure.that: "file?" [file? p]
+ensure.that: "directory? /tmp" [directory? "/tmp"]
+ensure.that: "read written file" ["hello-chapter" = read p]
+write.append " more" p
+ensure.that: "write.append" ["hello-chapter more" = read p]
+
+js: write.json #[a: 1] null
+js2: write.json #[a: 1] ø
+ensure.that: "write.json null returns a string" [string? js]
+ensure.that: "write.json oe is the same as null" [js = js2]
+roundtrip: read.json js
+ensure.that: "read.json of that string" [1 = get roundtrip "a"]
+
+delete p
+ensure.that: "delete removes the file" [not? exists? p]
+
+print "PASS files/chapter-overview"

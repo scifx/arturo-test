@@ -1,0 +1,12 @@
+; Module area: Reflection
+; Source: https://arturo-lang.io/documentation/library/reflection
+
+ensure.that: "arity of add is 2" [2 = arity\add]
+ensure.that: "set? of a bound name" [set? 'sys]
+ensure.that: "set? of missing name" [not? set? 'thisNameDoesNotExist]
+ensure.that: "symbols is a dictionary" [dictionary? symbols]
+splitMeta: info.get 'split
+ensure.that: "info.get split has name" ["split" = get splitMeta 'name]
+ensure.that: "standalone? in this file" [standalone?]
+
+print "PASS reflection/chapter-overview"

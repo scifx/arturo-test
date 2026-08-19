@@ -1,0 +1,34 @@
+; Module area: Crypto
+; Source: https://arturo-lang.io/documentation/library/crypto
+
+ensure.that: "digest default is md5 of hello world" [
+    "5eb63bbbe01eeed093cb22bb8f5acdc3" = digest "hello world"
+]
+ensure.that: "digest.sha of hello world" [
+    "2aae6c35c94fcfb415dbe95f408b9ce91ee846ed" = digest.sha "hello world"
+]
+ensure.that: "crc of hello world is uppercase hex here" [
+    "0D4A1185" = crc "hello world"
+]
+
+encoded: encode "Hello World!"
+ensure.that: "base64 encode" ["SGVsbG8gV29ybGQh" = encoded]
+ensure.that: "base64 decode roundtrip" ["Hello World!" = decode encoded]
+
+raw: "https://example.com/path with spaces?q=test+1"
+enc: encode.url raw
+ensure.that: "decode.url restores the original" [raw = decode.url enc]
+ensure.that: "encode.url.spaces uses percent-20" [
+    "hello%20world" = encode.url.spaces "hello world"
+]
+ensure.that: "encode.url.slashes encodes slash" [
+    "%2Fpath%2Fto%2Fresource" = encode.url.slashes "/path/to/resource"
+]
+ensure.that: "default encode.url uses plus for spaces, not percent-20" [
+    contains? enc "+"
+]
+ensure.that: "default encode.url does not encode slash as percent-2F" [
+    not? contains? enc "%2F"
+]
+
+print "PASS crypto/chapter-overview"

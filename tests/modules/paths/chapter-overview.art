@@ -1,0 +1,24 @@
+; Module area: Paths
+; Source: https://arturo-lang.io/documentation/library/paths
+
+path: "photos/vacation/beach.jpg"
+ensure.that: "extract.directory" ["photos/vacation" = extract.directory path]
+ensure.that: "extract.filename" ["beach" = extract.filename path]
+ensure.that: "extract.extension" [".jpg" = extract.extension path]
+ensure.that: "extract.basename" ["beach.jpg" = extract.basename path]
+ensure.that: "absolute? /Users" [absolute? "/Users"]
+ensure.that: "relative path is not absolute" [not? absolute? "photos/img.jpg"]
+
+url: "https://example.com:8080/path/page.html?q=term#section"
+ensure.that: "extract.scheme" ["https" = extract.scheme url]
+ensure.that: "extract.host" ["example.com" = extract.host url]
+ensure.that: "extract.port is the string 8080" ["8080" = extract.port url]
+ensure.that: "extract.path" ["/path/page.html" = extract.path url]
+ensure.that: "extract.query" ["q=term" = extract.query url]
+ensure.that: "extract.anchor" ["section" = extract.anchor url]
+ensure.that: "normalize dot-dot" ["file.txt" = normalize "./folder/../file.txt"]
+ensure.that: "normalize.tilde expands home" [
+    prefix? (normalize.tilde "~/code") "/home/"
+]
+
+print "PASS paths/chapter-overview"

@@ -1,0 +1,16 @@
+; Module area: System
+; Source: https://arturo-lang.io/documentation/library/system
+; Only inspects values; does not exit/panic/execute arbitrary shell.
+
+ensure.that: "sys os is a literal word like linux" [literal? sys\os]
+ensure.that: "sys cpu arch is a literal" [literal? sys\cpu\arch]
+ensure.that: "process\\id is integer" [integer? process\id]
+ensure.that: "env has HOME" [key? env 'HOME]
+ensure.that: "env\\HOME is a string" [string? env\HOME]
+ensure.that: "path\\current is a string" [string? path\current]
+ensure.that: "path\\home is a string" [string? path\home]
+ensure.that: "path\\temp is a string" [string? path\temp]
+ensure.that: "superuser? is logical" [logical? superuser?]
+ensure.that: "this test file is standalone" [standalone?]
+
+print "PASS system/chapter-overview"

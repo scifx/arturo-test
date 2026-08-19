@@ -1,0 +1,36 @@
+; Module area: Strings
+; Source: https://arturo-lang.io/documentation/library/strings
+
+ensure.that: "upper" ["HELLO" = upper "hello"]
+ensure.that: "lower" ["world" = lower "WORLD"]
+ensure.that: "capitalize" ["John" = capitalize "john"]
+ensure.that: "prefix?" [prefix? "hello" "he"]
+ensure.that: "suffix?" [suffix? "hello" "lo"]
+ensure.that: "contains?" [contains? "hello" "ll"]
+ensure.that: "strip" ["hello" = strip " hello  "]
+ensure.that: "upper? works on this runtime" [upper? "HELLO"]
+ensure.that: "lower?" [lower? "hello"]
+ensure.that: "ascii?" [ascii? "hello"]
+ensure.that: "numeric? of digits" [numeric? "123"]
+ensure.that: "join.with" ["a, b, c" = join.with: ", " ["a" "b" "c"]]
+ensure.that: "slice 0 4 of hello world" ["hello" = slice "hello world" 0 4]
+
+name: "Bill"
+age: 38
+ensure.that: "tilde interpolates name" ["Hello Bill!" = ~"Hello |name|!"]
+ensure.that: "tilde interpolates expression" [
+    "Next year I'll be 39" = ~"Next year I'll be |age + 1|"
+]
+
+ensure.that: "match returns a block, not a bare string" [
+    ["o world"] = match "hello world" {/o(.+)d/}
+]
+ensure.that: "replace literal" ["hello there" = replace "hi there" "hi" "hello"]
+ensure.that: "replace regex digits" [
+    "Date: 2025" = replace "Date: 2024" {/\d+/} "2025"
+]
+ensure.that: "truncate 5 keeps a space before dots" [
+    "Hello ..." = truncate "Hello World" 5
+]
+
+print "PASS strings/chapter-overview"

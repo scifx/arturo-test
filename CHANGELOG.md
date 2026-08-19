@@ -37,8 +37,8 @@
   - `quantities`
   - `sets`
   - `statistics`
-- 按官方网页 library 总章继续核对：`bitwise` `comparison` `logic` `statistics` `sets` `colors` `dates`。
-- `./tests/run-all.sh` 当前跑通 33 个 `.art` 测试文件。
+- 总章核对续：`paths` `crypto` `strings` `types` `files` `system` `reflection` `iterators`。源码负数统一 `neg N`。
+- `./tests/run-all.sh` 当前跑通 41 个 `.art` 测试文件。
 
 ### 约定调整
 

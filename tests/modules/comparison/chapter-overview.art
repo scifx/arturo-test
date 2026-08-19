@@ -4,9 +4,9 @@
 
 ensure.that: "numeric equality" [2 = 2]
 ensure.that: "string equality" ["abc" = "abc"]
-ensure.that: "int is not string 2" [not? 2 = "2"]
+ensure.that: "int is not string 2" [not? (2 = "2")]
 ensure.that: "inequality <>" [2 <> 3]
-ensure.that: "2.0 equals 2" [not? 2.0 <> 2]
+ensure.that: "2.0 equals 2" [not? (2.0 <> 2)]
 ensure.that: "less?" [2 < 3]
 ensure.that: "less-or-equal is =< not <=" [2 =< 2]
 ensure.that: "greater-or-equal" [3 >= 2]
