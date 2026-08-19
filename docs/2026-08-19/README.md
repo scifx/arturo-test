@@ -19,3 +19,4 @@
 - 实战项目区在 `word-frequency` 之外新增 `vector-math`：官方 `module` 矢量库 + 3D 合力 / 三角形面积回归。
 - 模块化最小测试和经验包放在官方分区 `tests/modules/core/`。
 - 开始按官方网页 library 总章核对：`arithmetic` 已完成，`numbers` 总章已入库。
+- 用户当次提醒要写入当天 `对话总结.md`，不要只留在聊天或代码注释里。
