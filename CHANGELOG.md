@@ -17,6 +17,7 @@
 - 新增 `tools/sync-library-examples.py`，从已准备好的上游 skill/runtime 批量导出官方 `info.get` 示例。
 - 新增 `examples/library/`，作为官方示例 Markdown 集中索引副本。
 - 新增首个实战项目：`tests/projects/word-frequency/`。
+- 新增矢量计算实战项目：`tests/projects/vector-math/`（可导入模块 + 合力/三角形场景）。
 - 新增当日报告目录：`docs/2026-08-19/`。
 
 ### 验证
@@ -35,7 +36,7 @@
   - `quantities`
   - `sets`
   - `statistics`
-- `./tests/run-all.sh` 当前跑通 18 个 `.art` 测试文件。
+- `./tests/run-all.sh` 当前跑通 20 个 `.art` 测试文件。
 
 ### 约定调整
 
