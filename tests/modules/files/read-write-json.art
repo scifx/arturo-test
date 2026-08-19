@@ -1,0 +1,20 @@
+; Module area: Files / JSON
+; Official-function focus: write, read, write.json, read.json.
+
+payload: #[name: "Ada" score: 42 tags: ["agent" "skill"]]
+json: write.json payload null
+roundtrip: read.json json
+
+ensure.that: "write.json value null returns JSON string consumable by read.json" [(roundtrip\name) = "Ada"]
+ensure.that: "JSON block field roundtrips" [(roundtrip\tags) = ["agent" "skill"]]
+
+textPath: "/tmp/arturo-test-read-write.txt"
+jsonPath: "/tmp/arturo-test-read-write.json"
+write "hello from Arturo" textPath
+ensure.that: "write/read text file" [(read textPath) = "hello from Arturo"]
+
+write.json payload jsonPath
+fromFile: read.json jsonPath
+ensure.that: "write.json/read.json file score" [(fromFile\score) = 42]
+
+print "PASS files/read-write-json"

@@ -1,0 +1,12 @@
+; Module area: Strings
+; Official-function focus: lower, upper, split.words, replace, match.once.
+
+s: "Hello Arturo 123"
+
+ensure.that: "lower returns lowercase string" [(lower s) = "hello arturo 123"]
+ensure.that: "upper returns uppercase string" [(upper "skill") = "SKILL"]
+ensure.that: "split.words follows official option" [(split.words s) = ["Hello" "Arturo" "123"]]
+ensure.that: "replace returns new string" [(replace s "Arturo" "skill") = "Hello skill 123"]
+ensure.that: "regex literal uses brace form" [(match.once s {/\d+/}) = ["123"]]
+
+print "PASS strings/text-and-regex"

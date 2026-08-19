@@ -1,0 +1,31 @@
+; Practical project: word frequency report
+; Combines strings, collections, and JSON file helpers in one agent-style task.
+
+text: "Arturo skill, Arturo agent. Skill examples help agent write Arturo."
+
+cleaned: lower text
+cleaned: replace cleaned "," ""
+cleaned: replace cleaned "." ""
+words: split.words cleaned
+
+freq: #[]
+loop words 'w [
+    current: (key? freq w)? [get freq w] [0]
+    set freq w current + 1
+]
+
+report: #[
+    totalWords: size words
+    counts: freq
+]
+
+json: write.json report null
+roundtrip: read.json json
+
+ensure.that: "total word count" [(roundtrip\totalWords) = 10]
+ensure.that: "arturo count" [(get roundtrip\counts "arturo") = 3]
+ensure.that: "skill count" [(get roundtrip\counts "skill") = 2]
+ensure.that: "agent count" [(get roundtrip\counts "agent") = 2]
+ensure.that: "examples count" [(get roundtrip\counts "examples") = 1]
+
+print "PASS projects/word-frequency"

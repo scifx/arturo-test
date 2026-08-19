@@ -1,0 +1,21 @@
+; Module area: Collections
+; Official-function focus: sort, append/++, loop, key?, get, set.
+
+xs: [3 1 2]
+sort 'xs
+ensure.that: "sort mutates literal target" [xs = [1 2 3]]
+append 'xs 4
+ensure.that: "append mutates literal target" [xs = [1 2 3 4]]
+
+freq: #[]
+words: ["arturo" "skill" "arturo" "test" "skill" "arturo"]
+loop words 'w [
+    current: (key? freq w)? [get freq w] [0]
+    set freq w current + 1
+]
+
+ensure.that: "dictionary set/get dynamic string key" [(get freq "arturo") = 3]
+ensure.that: "dictionary key? dynamic string key" [key? freq "test"]
+ensure.that: "dictionary count for skill" [(get freq "skill") = 2]
+
+print "PASS collections/dictionary-and-mutation"

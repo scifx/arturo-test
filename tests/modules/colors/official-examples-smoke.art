@@ -1,0 +1,86 @@
+; Generated raw official examples smoke for module: colors
+; Source: info.get 'symbol | get 'example from the prepared upstream skill/runtime.
+; This file intentionally runs only modules whose full raw examples passed locally.
+
+; --- blend example 1 ---
+blend #red #CCCCCC                  ; => #E66666
+
+; --- blend example 2 ---
+blend .balance: 0.75 #red #CCCCCC   
+; => #D99999
+
+; --- darken example 1 ---
+darken #red 0.2         ; => #CC0000
+darken #red 0.5         ; => #7F0000
+
+darken #9944CC 0.3      ; => #6B308F
+
+; --- desaturate example 1 ---
+desaturate #red 0.2         ; => #E61919
+desaturate #red 0.5         ; => #BF4040
+
+desaturate #9944CC 0.3      ; => #9558B8
+
+; --- grayscale example 1 ---
+grayscale #red              ; => #808080
+grayscale #green            ; => #404040
+
+grayscale #FF44CC           ; => #A2A2A2
+
+; --- invert example 1 ---
+print #orange               ; #FFA500
+
+invert #orange              ; => #0059FF
+
+; --- lighten example 1 ---
+print #lightblue            ; #ADD8E6
+
+lighten #lightblue 0.2      ; => #D0FFFF
+lighten #lightblue 0.5      ; => #FFFFFF
+
+lighten #9944CC 0.3         ; => #C758FF
+
+; --- palette example 1 ---
+palette.triad #red      ; => [#FF0000 #00FF00 #0000FF]
+palette.tetrad #red     ; => [#FF0000 #80FF00 #00FFFF #7F00FF]
+
+; --- palette example 2 ---
+palette.split #red      ; => [#FF0000 #CCFF00 #0066FF]
+
+; --- palette example 3 ---
+palette.monochrome #red
+; => [#FF0000 #D40000 #AA0000 #7F0000 #550000 #2A0000]
+
+palette.monochrome.size:10 #red
+; => [#FF0000 #E50000 #CC0000 #B20000 #990000 #7F0000 #660000 #4C0000 #330000 #190000]
+
+; --- palette example 4 ---
+palette.analogous #red
+; => [#FF0099 #FF0066 #FF0033 #FF0000 #FF3300 #FF6600]
+
+palette.analogous.size:10 #red
+; => [#FF00FF #FF00CC #FF0099 #FF0066 #FF0033 #FF0000 #FF3300 #FF6600 #FF9900 #FFCC00]
+
+; --- palette example 5 ---
+palette.random #red
+; => [#FF0000 #00EC00 #0000D2 #00F000 #0000FF #00FF00]
+
+palette.random.size:10 #red
+; => [#FF0000 #00FF00 #0000FF #00FE00 #F30000 #00FD00 #0000ED #EC0000 #00F800 #0000D8]
+
+; --- saturate example 1 ---
+print #lightblue            ; #ADD8E6
+
+saturate #lightblue 0.2     ; => #A7DBEC
+saturate #lightblue 0.5     ; => #9FDFF4
+
+saturate #9944CC 0.3        ; => #A030E0
+
+; --- spin example 1 ---
+spin #red 90            ; => #80FF00
+spin #red 180           ; => #00FFFF
+
+spin #123456 45         ; => #231256
+spin #123456 360        ; => #123456
+
+print "PASS official-examples/colors"

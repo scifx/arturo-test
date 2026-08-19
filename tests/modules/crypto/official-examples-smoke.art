@@ -1,0 +1,42 @@
+; Generated raw official examples smoke for module: crypto
+; Source: info.get 'symbol | get 'example from the prepared upstream skill/runtime.
+; This file intentionally runs only modules whose full raw examples passed locally.
+
+; --- crc example 1 ---
+print crc "The quick brown fox jumps over the lazy dog"
+; 414FA339
+
+; --- decode example 1 ---
+print decode "TnVtcXVhbSBmdWdpZW5zIHJlc3BleGVyaXM="
+; Numquam fugiens respexeris
+
+; --- decode example 2 ---
+print decode.url "http%3A%2F%2Ffoo+bar%2F"
+; http://foo bar/
+
+; --- digest example 1 ---
+print digest "Hello world"
+; 3e25960a79dbc69b674cd4ec67a72c62
+
+; --- digest example 2 ---
+print digest.sha "Hello world"
+; 7b502c3a1f48c8609ae212cdfb639dee39673f5e
+
+; --- encode example 1 ---
+print encode "Numquam fugiens respexeris"
+; TnVtcXVhbSBmdWdpZW5zIHJlc3BleGVyaXM=
+
+; --- encode example 2 ---
+print encode.url "http://foo bar/"
+; http%3A%2F%2Ffoo+bar%2F
+
+; --- hash example 1 ---
+print hash "hello"      ; 613153351
+print hash [1 2 3]      ; 645676735036410
+print hash 123          ; 123
+
+a: [1 2 3]
+b: [1 2 3]
+print (hash a)=(hash b) ; true
+
+print "PASS official-examples/crypto"

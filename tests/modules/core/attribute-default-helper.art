@@ -1,0 +1,22 @@
+; Module area: Core / attributes and functions
+; Source style: issue #2136-derived default helper, verified against the bundled runtime.
+
+default: function.inline [name value][
+    let name ((attr name) ?? value)
+]
+
+configure: $[placeholder][
+    default 'host "localhost"
+    default 'port 80
+    #[host: host port: port]
+]
+
+a: configure null
+b: configure.host: "agent.local" .port: 8080 null
+
+ensure.that: "default host is used when attr is absent" [(a\host) = "localhost"]
+ensure.that: "default port is used when attr is absent" [(a\port) = 80]
+ensure.that: "attribute overrides host" [(b\host) = "agent.local"]
+ensure.that: "attribute overrides port" [(b\port) = 8080]
+
+print "PASS core/attribute-default-helper"
