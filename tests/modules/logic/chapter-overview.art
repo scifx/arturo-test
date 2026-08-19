@@ -1,0 +1,35 @@
+; Module area: Logic
+; Source: https://arturo-lang.io/documentation/library/logic
+; Official-function focus: true? false? and? or? xor? maybe all? any?
+; nand? nor? xnor? short-circuit blocks
+
+ensure.that: "true? true" [true? true]
+ensure.that: "false? false" [false? false]
+ensure.that: "true? maybe is maybe" [maybe = true? maybe]
+ensure.that: "and? true true" [and? true true]
+ensure.that: "or? true false" [or? true false]
+ensure.that: "xor? true true is false" [not? xor? true true]
+ensure.that: "and? true maybe is maybe" [maybe = and? true maybe]
+ensure.that: "or? true maybe is true" [or? true maybe]
+
+seenAnd: false
+if and? [1 = 2][seenAnd: true] -> print "and branch"
+ensure.that: "and? short-circuits second block" [not? seenAnd]
+
+seenOr: false
+orRan: false
+if or? [1 = 1][seenOr: true] [
+    orRan: true
+]
+ensure.that: "or? short-circuits second block" [not? seenOr]
+ensure.that: "or? first-true takes the if branch" [orRan]
+
+conditions: @[true false true true]
+ensure.that: "all? mixed is false" [not? all? conditions]
+ensure.that: "any? mixed is true" [any? conditions]
+
+ensure.that: "nand? true false" [nand? true false]
+ensure.that: "nor? true false is false" [not? nor? true false]
+ensure.that: "xnor? true false is false" [not? xnor? true false]
+
+print "PASS logic/chapter-overview"

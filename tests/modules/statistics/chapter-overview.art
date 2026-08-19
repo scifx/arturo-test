@@ -1,0 +1,31 @@
+; Module area: Statistics
+; Source: https://arturo-lang.io/documentation/library/statistics
+; Official-function focus: average median deviation variance skewness kurtosis
+; plus .sample variants.
+
+data: [1 2 3 5 7]
+ensure.that: "average [1 2 3 5 7]" [3.6 = average data]
+ensure.that: "median [1 2 3 5 7]" [3 = median data]
+ensure.that: "average of range 1..100" [50.5 = average 1..100]
+
+numbers: [2 4 4 4 5 5 7 9]
+ensure.that: "population deviation is about 2" [
+    0.0000001 > abs ((deviation numbers) - 2.0)
+]
+ensure.that: "population variance is about 4" [
+    0.0000001 > abs ((variance numbers) - 4.0)
+]
+ensure.that: "sample deviation from chapter" [
+    2.138089935299395 = deviation.sample numbers
+]
+ensure.that: "sample variance from chapter" [
+    4.571428571428571 = variance.sample numbers
+]
+
+dist: [1 2 2 3 3 3 4 4 5]
+ensure.that: "skewness of symmetric data" [0.0 = round.to: 3 skewness dist]
+ensure.that: "kurtosis platykurtic" [(neg 0.75) = round.to: 3 kurtosis dist]
+ensure.that: "sample skewness" [0.0 = round.to: 3 skewness.sample dist]
+ensure.that: "sample kurtosis rounded" [(neg 0.286) = round.to: 3 kurtosis.sample dist]
+
+print "PASS statistics/chapter-overview"

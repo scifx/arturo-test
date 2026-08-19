@@ -1,0 +1,26 @@
+; Module area: Dates
+; Source: https://arturo-lang.io/documentation/library/dates
+; Official-function focus: now after before leap? future? past? today?
+; to :date .format / to :string .format
+; Note: the web chapter writes current\day] with a stray ]; the field is \day.
+
+current: now
+ensure.that: "now is a date" [date? current]
+ensure.that: "year field is integer" [integer? current\year]
+ensure.that: "month field is integer" [integer? current\month]
+ensure.that: "day field is integer" [integer? current\day]
+ensure.that: "2024 is leap" [leap? 2024]
+ensure.that: "2026 is not leap" [not? leap? 2026]
+ensure.that: "after.days:1 is future" [future? after.days: 1 current]
+ensure.that: "before.days:1 is past" [past? before.days: 1 current]
+ensure.that: "today? now" [today? current]
+
+meeting: to :date .format: "yyyy-MM-dd" "2024-03-15"
+ensure.that: "parsed year" [2024 = meeting\year]
+ensure.that: "parsed month" [3 = meeting\month]
+ensure.that: "parsed day" [15 = meeting\day]
+ensure.that: "format roundtrip date part" [
+    "2024-03-15" = to :string .format: "yyyy-MM-dd" meeting
+]
+
+print "PASS dates/chapter-overview"

@@ -1,0 +1,22 @@
+; Module area: Comparison
+; Source: https://arturo-lang.io/documentation/library/comparison
+; Official-function focus: = <> < > =< >= <=> between? compare same?
+
+ensure.that: "numeric equality" [2 = 2]
+ensure.that: "string equality" ["abc" = "abc"]
+ensure.that: "int is not string 2" [not? 2 = "2"]
+ensure.that: "inequality <>" [2 <> 3]
+ensure.that: "2.0 equals 2" [not? 2.0 <> 2]
+ensure.that: "less?" [2 < 3]
+ensure.that: "less-or-equal is =< not <=" [2 =< 2]
+ensure.that: "greater-or-equal" [3 >= 2]
+ensure.that: "<=> is inclusive between" [5 <=> 1 10]
+ensure.that: "between? matches <=>" [between? 5 1 10]
+ensure.that: "compare hello world is -1" [(neg 1) = compare "hello" "world"]
+
+nx: 1`N
+ny: 1`kg.m/s2
+ensure.that: "newton equals kg m/s2" [nx = ny]
+ensure.that: "same? is identity not value" [not? same? nx ny]
+
+print "PASS comparison/chapter-overview"
