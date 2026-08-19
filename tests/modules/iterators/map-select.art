@@ -1,0 +1,17 @@
+; Module area: Iterators
+; Official-function focus: map, map.with, select.
+
+doubled: map 1..5 'x [2 * x]
+ensure.that: "map range to block" [doubled = [2 4 6 8 10]]
+
+arr: [1 2 3]
+map 'arr 'x [x * x]
+ensure.that: "map literal target mutates in place" [arr = [1 4 9]]
+
+evens: select 1..6 'x [even? x]
+ensure.that: "select filters values" [evens = [2 4 6]]
+
+labeled: map.with:'i ["a" "b" "c"] 'x [~"|i|:|x|"]
+ensure.that: "map.with exposes index literal" [labeled = ["0:a" "1:b" "2:c"]]
+
+print "PASS iterators/map-select"

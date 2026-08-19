@@ -1,0 +1,68 @@
+; Generated raw official examples smoke for module: bitwise
+; Source: info.get 'symbol | get 'example from the prepared upstream skill/runtime.
+; This file intentionally runs only modules whose full raw examples passed locally.
+
+; --- and example 1 ---
+print and 2 3      ; 2
+
+; --- and example 2 ---
+a: 2
+and 'a 3           ; a: 2
+
+; --- nand example 1 ---
+print nand 2 3     ; -3
+
+; --- nand example 2 ---
+a: 2
+nand 'a 3          ; a: -3
+
+; --- nor example 1 ---
+print nor 2 3      ; -4
+
+; --- nor example 2 ---
+a: 2
+nor 'a 3           ; a: -4
+
+; --- not example 1 ---
+print not 123      ; -124
+
+; --- not example 2 ---
+a: 123
+not 'a             ; a: -124
+
+; --- or example 1 ---
+print or 2 3       ; 3
+
+; --- or example 2 ---
+a: 2
+or 'a 3            ; a: 3
+
+; --- shl example 1 ---
+print shl 2 3      ; 16
+
+; --- shl example 2 ---
+a: 2
+shl 'a 3           ; a: 16
+
+; --- shr example 1 ---
+print shr 16 3     ; 2
+
+; --- shr example 2 ---
+a: 16
+shr 'a 3           ; a: 2
+
+; --- xnor example 1 ---
+print xnor 2 3     ; -2
+
+; --- xnor example 2 ---
+a: 2
+xnor 'a 3          ; a: -2
+
+; --- xor example 1 ---
+print xor 2 3      ; 1
+
+; --- xor example 2 ---
+a: 2
+xor 'a 3           ; a: 1
+
+print "PASS official-examples/bitwise"

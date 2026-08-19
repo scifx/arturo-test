@@ -1,0 +1,481 @@
+; Generated raw official examples smoke for module: quantities
+; Source: info.get 'symbol | get 'example from the prepared upstream skill/runtime.
+; This file intentionally runs only modules whose full raw examples passed locally.
+
+; --- acceleration? example 1 ---
+acceleration? 3`m/s2
+; => true
+
+; --- action? example 1 ---
+action? 4`kg.m2/s
+; => true
+
+; --- alphaParticleMass example 1 ---
+
+
+; --- angle? example 1 ---
+angle? 5`rad
+; => true
+
+; --- angstromStar example 1 ---
+
+
+; --- angularVelocity? example 1 ---
+angularVelocity? 6`rad/s
+; => true
+
+; --- area? example 1 ---
+area? 3`m2
+; => true
+
+; --- areaDensity? example 1 ---
+areaDensity? 4`kg/m2
+; => true
+
+; --- atomicMass example 1 ---
+
+
+; --- avogadroConstant example 1 ---
+
+
+; --- bohrRadius example 1 ---
+
+
+; --- boltzmannConstant example 1 ---
+
+
+; --- capacitance? example 1 ---
+capacitance? 5`F
+; => true
+
+; --- charge? example 1 ---
+charge? 6`C
+; => true
+
+; --- classicalElectronRadius example 1 ---
+
+
+; --- conductance? example 1 ---
+conductance? 3`S
+; => true
+
+; --- conductanceQuantum example 1 ---
+
+
+; --- conforms? example 1 ---
+conforms? 3`m `m                ; => true
+conforms? 4`m `cm               ; => true
+
+4`yd := 5`m                     ; => true
+5`m := `s                       ; => false
+
+; --- conforms? example 2 ---
+givenValue: 6`yd/s      
+
+conforms? givenValue `m         ; => false
+conforms? givenValue `km/h      ; => true
+
+; --- conforms? example 3 ---
+3`m := 4`m                      ; => true
+5`W := 5`N                      ; => false
+5`W := 3`J/s                    ; => true
+
+; --- convert example 1 ---
+print convert 3`m `cm
+; 300.0 cm
+
+print 1`yd2 --> `m2
+; 0.836127 m²
+
+; --- currency? example 1 ---
+currency? 4`USD
+; => true
+
+; --- current? example 1 ---
+current? 5`A
+; => true
+
+; --- currentDensity? example 1 ---
+currentDensity? 6`A/m2
+; => true
+
+; --- dataTransferRate? example 1 ---
+dataTransferRate? 3`B/s
+; => true
+
+; --- density? example 1 ---
+density? 4`kg/m3
+; => true
+
+; --- deuteronMass example 1 ---
+
+
+; --- elastance? example 1 ---
+elastance? 5`Daraf
+; => true
+
+; --- electricField? example 1 ---
+electricField? 6`V/m
+; => true
+
+; --- electricityPrice? example 1 ---
+electricityPrice? 3`USD/kWh
+; => true
+
+; --- electronCharge example 1 ---
+
+
+; --- electronMass example 1 ---
+
+
+; --- electronMassEnergy example 1 ---
+
+
+; --- energy? example 1 ---
+energy? 4`J
+; => true
+
+; --- entropy? example 1 ---
+entropy? 5`J/K
+; => true
+
+; --- force? example 1 ---
+force? 6`N
+; => true
+
+; --- frequency? example 1 ---
+frequency? 3`Hz
+; => true
+
+; --- gravitationalConstant example 1 ---
+
+
+; --- hartreeEnergy example 1 ---
+
+
+; --- heatFlux? example 1 ---
+heatFlux? 4`W/m2
+; => true
+
+; --- helionMass example 1 ---
+
+
+; --- illuminance? example 1 ---
+illuminance? 5`lx
+; => true
+
+; --- impedanceOfVacuum example 1 ---
+
+
+; --- in example 1 ---
+print in`cm 3`m
+; 300.0 cm
+
+print in`m2 1`yd2
+; 0.836127 m²
+
+; --- inductance? example 1 ---
+inductance? 6`H
+; => true
+
+; --- information? example 1 ---
+information? 3`kB
+; => true
+
+; --- inverseConductanceQuantum example 1 ---
+
+
+; --- jerk? example 1 ---
+jerk? 4`m/s3
+; => true
+
+; --- josephsonConstant example 1 ---
+
+
+; --- kinematicViscosity? example 1 ---
+kinematicViscosity? 5`m2/s
+; => true
+
+; --- length? example 1 ---
+length? 6`m
+; => true
+
+; --- luminosity? example 1 ---
+luminosity? 3`cd
+; => true
+
+; --- luminousFlux? example 1 ---
+luminousFlux? 4`lm
+; => true
+
+; --- magneticFieldStrength? example 1 ---
+magneticFieldStrength? 3`A/m
+; => true
+
+; --- magneticFlux? example 1 ---
+magneticFlux? 5`Wb
+; => true
+
+; --- magneticFluxDensity? example 1 ---
+magneticFluxDensity? 6`T
+; => true
+
+; --- magneticFluxQuantum example 1 ---
+
+
+; --- mass? example 1 ---
+mass? 4`kg
+; => true
+
+; --- massFlowRate? example 1 ---
+massFlowRate? 5`kg/s
+; => true
+
+; --- molarConcentration? example 1 ---
+molarConcentration? 6`mol/m3
+; => true
+
+; --- molarGasConstant example 1 ---
+
+
+; --- moleFlowRate? example 1 ---
+moleFlowRate? 3`mol/s
+; => true
+
+; --- momentofInertia? example 1 ---
+momentofInertia? 4`kg.m2
+; => true
+
+; --- momentum? example 1 ---
+momentum? 5`kg.m/s
+; => true
+
+; --- muonMass example 1 ---
+
+
+; --- neutronMass example 1 ---
+
+
+; --- permeability? example 1 ---
+permeability? 6`H/m
+; => true
+
+; --- permittivity? example 1 ---
+permittivity? 3`F/m
+; => true
+
+; --- planckConstant example 1 ---
+
+
+; --- planckLength example 1 ---
+
+
+; --- planckMass example 1 ---
+
+
+; --- planckTemperature example 1 ---
+
+
+; --- planckTime example 1 ---
+
+
+; --- potential? example 1 ---
+potential? 4`V
+; => true
+
+; --- power? example 1 ---
+power? 5`W
+; => true
+
+; --- pressure? example 1 ---
+pressure? 6`Pa
+; => true
+
+; --- property example 1 ---
+property 3`m            ; => 'length
+property 4`m2           ; => 'area
+property 5`m3           ; => 'volume
+
+property 6`J/s          ; => 'power
+property 3`V            ; => 'potential
+
+; --- protonMass example 1 ---
+
+
+; --- protonMassEnergy example 1 ---
+
+
+; --- radiation? example 1 ---
+radiation? 3`Gy
+; => true
+
+; --- radiationExposure? example 1 ---
+radiationExposure? 4`C/kg
+; => true
+
+; --- reducedPlanckConstant example 1 ---
+
+
+; --- resistance? example 1 ---
+resistance? 5`Ohm
+; => true
+
+; --- resistivity? example 1 ---
+resistivity? 6`Ohm.m
+; => true
+
+; --- rydbergConstant example 1 ---
+
+
+; --- salary? example 1 ---
+salary? 3`USD/h
+; => true
+
+; --- scalar example 1 ---
+scalar 3`m              ; => 3
+scalar 4.0`m2           ; => 4
+scalar 10:2`m3          ; => 5
+
+; --- scalar example 2 ---
+scalar 3.1`m            ; => 3.1
+scalar 5:2`m            ; => 2.5
+
+; --- scalar example 3 ---
+scalar 13:3`m           ; => 13/3
+
+; --- snap? example 1 ---
+snap? 3`m/s4
+; => true
+
+; --- solidAngle? example 1 ---
+solidAngle? 4`sr
+; => true
+
+; --- specificVolume? example 1 ---
+specificVolume? 5`m3/kg
+; => true
+
+; --- specify example 1 ---
+specify 'nauMile 1.1508`mi
+
+print 2`nauMile                ; 2 nauMile
+print 3`nauMile --> `km        ; 5.5560992256 km
+
+; --- specify example 2 ---
+specify.symbol:"NM" 'nauMile 1.1508`mi
+
+print 2`nauMile                ; 2 NM
+
+; --- specify example 3 ---
+specify.describes:"coding speed" 'lph `lines/h
+
+print 100`lph                   ; 100 lph
+print property 100`lph          ; coding speed
+
+; --- specify example 4 ---
+specify.property "sweetness" `tspSugar
+
+print property 3`tspSugar       ; sweetness
+
+; --- speed? example 1 ---
+speed? 6`m/s
+; => true
+
+; --- speedOfLight example 1 ---
+
+
+; --- standardGasVolume example 1 ---
+
+
+; --- standardPressure example 1 ---
+
+
+; --- standardTemperature example 1 ---
+
+
+; --- substance? example 1 ---
+substance? 4`mol
+; => true
+
+; --- surfaceTension? example 1 ---
+surfaceTension? 5`N/m
+; => true
+
+; --- tauMass example 1 ---
+
+
+; --- temperature? example 1 ---
+temperature? 6`oC
+; => true
+
+; --- thermalConductivity? example 1 ---
+thermalConductivity? 3`W/m.K
+; => true
+
+; --- thermalInsulance? example 1 ---
+thermalInsulance? 4`m2.K/W
+; => true
+
+; --- thomsonCrossSection example 1 ---
+
+
+; --- time? example 1 ---
+time? 5`s
+; => true
+
+; --- tritonMass example 1 ---
+
+
+; --- unitless? example 1 ---
+unitless? 6`items
+; => true
+
+; --- units example 1 ---
+units 3`m               ; => `m
+units `m2               ; => `m2
+units 8`J/s             ; => `J/s
+units 7`W               ; => `W
+
+; --- units example 2 ---
+units.base 3`m          ; => `m
+units.base `m2          ; => `m2
+units.base 8`J/s        ; => `J/s
+units.base 7`W          ; => `J/s
+
+; --- units example 3 ---
+specify 'ff 3`items
+units 3`ff              ; => `items
+units.base 3`ff         ; => `items
+units.base 3`ff.ha      ; => `items.m2
+
+; --- units example 4 ---
+specify 'kk 3`m2        
+units 3`kk              ; => `kk
+units.base 3`kk         ; => `m2
+
+; --- vacuumPermeability example 1 ---
+
+
+; --- vacuumPermittivity example 1 ---
+
+
+; --- viscosity? example 1 ---
+viscosity? 3`Pa.s
+; => true
+
+; --- volume? example 1 ---
+volume? 4`m3
+; => true
+
+; --- volumetricFlow? example 1 ---
+volumetricFlow? 5`m3/s
+; => true
+
+; --- vonKlitzingConstant example 1 ---
+
+
+; --- waveNumber? example 1 ---
+waveNumber? 6`/m
+; => true
+
+print "PASS official-examples/quantities"

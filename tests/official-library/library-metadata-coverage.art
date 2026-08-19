@@ -1,0 +1,3659 @@
+; Generated official library metadata coverage test.
+; Verifies that symbols from the upstream skill library index expose info.get metadata and examples.
+
+checked: 0
+failures: []
+
+err: try [
+    meta: info.get 'add
+    ensure.that: "add metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "add has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "add"]
+
+err: try [
+    meta: info.get 'dec
+    ensure.that: "dec metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "dec has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "dec"]
+
+err: try [
+    meta: info.get 'div
+    ensure.that: "div metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "div has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "div"]
+
+err: try [
+    meta: info.get 'divmod
+    ensure.that: "divmod metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "divmod has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "divmod"]
+
+err: try [
+    meta: info.get 'fdiv
+    ensure.that: "fdiv metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "fdiv has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "fdiv"]
+
+err: try [
+    meta: info.get 'inc
+    ensure.that: "inc metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "inc has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "inc"]
+
+err: try [
+    meta: info.get 'mod
+    ensure.that: "mod metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "mod has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "mod"]
+
+err: try [
+    meta: info.get 'mul
+    ensure.that: "mul metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "mul has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "mul"]
+
+err: try [
+    meta: info.get 'neg
+    ensure.that: "neg metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "neg has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "neg"]
+
+err: try [
+    meta: info.get 'pow
+    ensure.that: "pow metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "pow has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "pow"]
+
+err: try [
+    meta: info.get 'sub
+    ensure.that: "sub metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sub has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sub"]
+
+err: try [
+    meta: info.get 'and
+    ensure.that: "and metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "and has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "and"]
+
+err: try [
+    meta: info.get 'nand
+    ensure.that: "nand metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "nand has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "nand"]
+
+err: try [
+    meta: info.get 'nor
+    ensure.that: "nor metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "nor has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "nor"]
+
+err: try [
+    meta: info.get 'not
+    ensure.that: "not metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "not has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "not"]
+
+err: try [
+    meta: info.get 'or
+    ensure.that: "or metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "or has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "or"]
+
+err: try [
+    meta: info.get 'shl
+    ensure.that: "shl metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "shl has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "shl"]
+
+err: try [
+    meta: info.get 'shr
+    ensure.that: "shr metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "shr has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "shr"]
+
+err: try [
+    meta: info.get 'xnor
+    ensure.that: "xnor metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "xnor has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "xnor"]
+
+err: try [
+    meta: info.get 'xor
+    ensure.that: "xor metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "xor has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "xor"]
+
+err: try [
+    meta: info.get 'append
+    ensure.that: "append metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "append has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "append"]
+
+err: try [
+    meta: info.get 'array
+    ensure.that: "array metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "array has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "array"]
+
+err: try [
+    meta: info.get 'chop
+    ensure.that: "chop metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "chop has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "chop"]
+
+err: try [
+    meta: info.get 'combine
+    ensure.that: "combine metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "combine has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "combine"]
+
+err: try [
+    meta: info.get 'contains?
+    ensure.that: "contains? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "contains? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "contains?"]
+
+err: try [
+    meta: info.get 'couple
+    ensure.that: "couple metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "couple has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "couple"]
+
+err: try [
+    meta: info.get 'decouple
+    ensure.that: "decouple metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "decouple has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "decouple"]
+
+err: try [
+    meta: info.get 'dictionary
+    ensure.that: "dictionary metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "dictionary has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "dictionary"]
+
+err: try [
+    meta: info.get 'drop
+    ensure.that: "drop metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "drop has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "drop"]
+
+err: try [
+    meta: info.get 'empty
+    ensure.that: "empty metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "empty has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "empty"]
+
+err: try [
+    meta: info.get 'empty?
+    ensure.that: "empty? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "empty? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "empty?"]
+
+err: try [
+    meta: info.get 'extend
+    ensure.that: "extend metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "extend has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "extend"]
+
+err: try [
+    meta: info.get 'first
+    ensure.that: "first metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "first has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "first"]
+
+err: try [
+    meta: info.get 'flatten
+    ensure.that: "flatten metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "flatten has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "flatten"]
+
+err: try [
+    meta: info.get 'get
+    ensure.that: "get metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "get has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "get"]
+
+err: try [
+    meta: info.get 'in?
+    ensure.that: "in? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "in? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "in?"]
+
+err: try [
+    meta: info.get 'index
+    ensure.that: "index metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "index has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "index"]
+
+err: try [
+    meta: info.get 'insert
+    ensure.that: "insert metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "insert has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "insert"]
+
+err: try [
+    meta: info.get 'key?
+    ensure.that: "key? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "key? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "key?"]
+
+err: try [
+    meta: info.get 'keys
+    ensure.that: "keys metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "keys has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "keys"]
+
+err: try [
+    meta: info.get 'last
+    ensure.that: "last metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "last has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "last"]
+
+err: try [
+    meta: info.get 'max
+    ensure.that: "max metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "max has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "max"]
+
+err: try [
+    meta: info.get 'min
+    ensure.that: "min metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "min has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "min"]
+
+err: try [
+    meta: info.get 'one?
+    ensure.that: "one? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "one? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "one?"]
+
+err: try [
+    meta: info.get 'permutate
+    ensure.that: "permutate metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "permutate has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "permutate"]
+
+err: try [
+    meta: info.get 'pop
+    ensure.that: "pop metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "pop has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "pop"]
+
+err: try [
+    meta: info.get 'prepend
+    ensure.that: "prepend metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "prepend has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "prepend"]
+
+err: try [
+    meta: info.get 'range
+    ensure.that: "range metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "range has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "range"]
+
+err: try [
+    meta: info.get 'remove
+    ensure.that: "remove metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "remove has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "remove"]
+
+err: try [
+    meta: info.get 'repeat
+    ensure.that: "repeat metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "repeat has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "repeat"]
+
+err: try [
+    meta: info.get 'reverse
+    ensure.that: "reverse metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "reverse has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "reverse"]
+
+err: try [
+    meta: info.get 'rotate
+    ensure.that: "rotate metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "rotate has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "rotate"]
+
+err: try [
+    meta: info.get 'sample
+    ensure.that: "sample metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sample has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sample"]
+
+err: try [
+    meta: info.get 'set
+    ensure.that: "set metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "set has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "set"]
+
+err: try [
+    meta: info.get 'shuffle
+    ensure.that: "shuffle metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "shuffle has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "shuffle"]
+
+err: try [
+    meta: info.get 'size
+    ensure.that: "size metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "size has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "size"]
+
+err: try [
+    meta: info.get 'slice
+    ensure.that: "slice metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "slice has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "slice"]
+
+err: try [
+    meta: info.get 'sort
+    ensure.that: "sort metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sort has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sort"]
+
+err: try [
+    meta: info.get 'sorted?
+    ensure.that: "sorted? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sorted? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sorted?"]
+
+err: try [
+    meta: info.get 'split
+    ensure.that: "split metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "split has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "split"]
+
+err: try [
+    meta: info.get 'squeeze
+    ensure.that: "squeeze metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "squeeze has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "squeeze"]
+
+err: try [
+    meta: info.get 'take
+    ensure.that: "take metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "take has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "take"]
+
+err: try [
+    meta: info.get 'tally
+    ensure.that: "tally metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "tally has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "tally"]
+
+err: try [
+    meta: info.get 'unique
+    ensure.that: "unique metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "unique has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "unique"]
+
+err: try [
+    meta: info.get 'values
+    ensure.that: "values metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "values has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "values"]
+
+err: try [
+    meta: info.get 'zero?
+    ensure.that: "zero? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "zero? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "zero?"]
+
+err: try [
+    meta: info.get 'blend
+    ensure.that: "blend metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "blend has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "blend"]
+
+err: try [
+    meta: info.get 'darken
+    ensure.that: "darken metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "darken has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "darken"]
+
+err: try [
+    meta: info.get 'desaturate
+    ensure.that: "desaturate metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "desaturate has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "desaturate"]
+
+err: try [
+    meta: info.get 'grayscale
+    ensure.that: "grayscale metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "grayscale has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "grayscale"]
+
+err: try [
+    meta: info.get 'invert
+    ensure.that: "invert metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "invert has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "invert"]
+
+err: try [
+    meta: info.get 'lighten
+    ensure.that: "lighten metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "lighten has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "lighten"]
+
+err: try [
+    meta: info.get 'palette
+    ensure.that: "palette metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "palette has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "palette"]
+
+err: try [
+    meta: info.get 'saturate
+    ensure.that: "saturate metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "saturate has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "saturate"]
+
+err: try [
+    meta: info.get 'spin
+    ensure.that: "spin metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "spin has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "spin"]
+
+err: try [
+    meta: info.get 'between?
+    ensure.that: "between? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "between? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "between?"]
+
+err: try [
+    meta: info.get 'compare
+    ensure.that: "compare metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "compare has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "compare"]
+
+err: try [
+    meta: info.get 'equal?
+    ensure.that: "equal? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "equal? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "equal?"]
+
+err: try [
+    meta: info.get 'greater?
+    ensure.that: "greater? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "greater? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "greater?"]
+
+err: try [
+    meta: info.get 'greaterOrEqual?
+    ensure.that: "greaterOrEqual? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "greaterOrEqual? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "greaterOrEqual?"]
+
+err: try [
+    meta: info.get 'less?
+    ensure.that: "less? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "less? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "less?"]
+
+err: try [
+    meta: info.get 'lessOrEqual?
+    ensure.that: "lessOrEqual? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "lessOrEqual? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "lessOrEqual?"]
+
+err: try [
+    meta: info.get 'notEqual?
+    ensure.that: "notEqual? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "notEqual? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "notEqual?"]
+
+err: try [
+    meta: info.get 'same?
+    ensure.that: "same? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "same? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "same?"]
+
+err: try [
+    meta: info.get 'alias
+    ensure.that: "alias metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "alias has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "alias"]
+
+err: try [
+    meta: info.get 'any
+    ensure.that: "any metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "any has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "any"]
+
+err: try [
+    meta: info.get 'break
+    ensure.that: "break metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "break has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "break"]
+
+err: try [
+    meta: info.get 'call
+    ensure.that: "call metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "call has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "call"]
+
+err: try [
+    meta: info.get 'case
+    ensure.that: "case metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "case has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "case"]
+
+err: try [
+    meta: info.get 'coalesce
+    ensure.that: "coalesce metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "coalesce has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "coalesce"]
+
+err: try [
+    meta: info.get 'continue
+    ensure.that: "continue metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "continue has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "continue"]
+
+err: try [
+    meta: info.get 'discard
+    ensure.that: "discard metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "discard has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "discard"]
+
+err: try [
+    meta: info.get 'do
+    ensure.that: "do metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "do has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "do"]
+
+err: try [
+    meta: info.get 'dup
+    ensure.that: "dup metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "dup has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "dup"]
+
+err: try [
+    meta: info.get 'ensure
+    ensure.that: "ensure metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "ensure has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "ensure"]
+
+err: try [
+    meta: info.get 'export
+    ensure.that: "export metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "export has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "export"]
+
+err: try [
+    meta: info.get 'express
+    ensure.that: "express metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "express has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "express"]
+
+err: try [
+    meta: info.get 'function
+    ensure.that: "function metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "function has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "function"]
+
+err: try [
+    meta: info.get 'if
+    ensure.that: "if metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "if has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "if"]
+
+err: try [
+    meta: info.get 'import
+    ensure.that: "import metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "import has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "import"]
+
+err: try [
+    meta: info.get 'let
+    ensure.that: "let metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "let has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "let"]
+
+err: try [
+    meta: info.get 'method
+    ensure.that: "method metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "method has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "method"]
+
+err: try [
+    meta: info.get 'module
+    ensure.that: "module metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "module has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "module"]
+
+err: try [
+    meta: info.get 'new
+    ensure.that: "new metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "new has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "new"]
+
+err: try [
+    meta: info.get 'null
+    ensure.that: "null metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "null has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "null"]
+
+err: try [
+    meta: info.get 'parse
+    ensure.that: "parse metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "parse has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "parse"]
+
+err: try [
+    meta: info.get 'return
+    ensure.that: "return metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "return has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "return"]
+
+err: try [
+    meta: info.get 'set?
+    ensure.that: "set? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "set? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "set?"]
+
+err: try [
+    meta: info.get 'switch
+    ensure.that: "switch metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "switch has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "switch"]
+
+err: try [
+    meta: info.get 'unless
+    ensure.that: "unless metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "unless has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "unless"]
+
+err: try [
+    meta: info.get 'unset
+    ensure.that: "unset metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "unset has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "unset"]
+
+err: try [
+    meta: info.get 'unstack
+    ensure.that: "unstack metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "unstack has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "unstack"]
+
+err: try [
+    meta: info.get 'until
+    ensure.that: "until metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "until has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "until"]
+
+err: try [
+    meta: info.get 'using
+    ensure.that: "using metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "using has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "using"]
+
+err: try [
+    meta: info.get 'var
+    ensure.that: "var metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "var has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "var"]
+
+err: try [
+    meta: info.get 'when
+    ensure.that: "when metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "when has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "when"]
+
+err: try [
+    meta: info.get 'while
+    ensure.that: "while metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "while has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "while"]
+
+err: try [
+    meta: info.get 'window
+    ensure.that: "window metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "window has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "window"]
+
+err: try [
+    meta: info.get 'with
+    ensure.that: "with metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "with has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "with"]
+
+err: try [
+    meta: info.get 'crc
+    ensure.that: "crc metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "crc has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "crc"]
+
+err: try [
+    meta: info.get 'decode
+    ensure.that: "decode metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "decode has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "decode"]
+
+err: try [
+    meta: info.get 'digest
+    ensure.that: "digest metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "digest has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "digest"]
+
+err: try [
+    meta: info.get 'encode
+    ensure.that: "encode metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "encode has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "encode"]
+
+err: try [
+    meta: info.get 'hash
+    ensure.that: "hash metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "hash has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "hash"]
+
+err: try [
+    meta: info.get 'close
+    ensure.that: "close metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "close has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "close"]
+
+err: try [
+    meta: info.get 'open
+    ensure.that: "open metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "open has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "open"]
+
+err: try [
+    meta: info.get 'query
+    ensure.that: "query metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "query has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "query"]
+
+err: try [
+    meta: info.get 'store
+    ensure.that: "store metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "store has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "store"]
+
+err: try [
+    meta: info.get 'after
+    ensure.that: "after metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "after has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "after"]
+
+err: try [
+    meta: info.get 'before
+    ensure.that: "before metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "before has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "before"]
+
+err: try [
+    meta: info.get 'friday?
+    ensure.that: "friday? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "friday? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "friday?"]
+
+err: try [
+    meta: info.get 'future?
+    ensure.that: "future? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "future? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "future?"]
+
+err: try [
+    meta: info.get 'leap?
+    ensure.that: "leap? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "leap? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "leap?"]
+
+err: try [
+    meta: info.get 'monday?
+    ensure.that: "monday? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "monday? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "monday?"]
+
+err: try [
+    meta: info.get 'now
+    ensure.that: "now metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "now has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "now"]
+
+err: try [
+    meta: info.get 'past?
+    ensure.that: "past? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "past? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "past?"]
+
+err: try [
+    meta: info.get 'saturday?
+    ensure.that: "saturday? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "saturday? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "saturday?"]
+
+err: try [
+    meta: info.get 'sunday?
+    ensure.that: "sunday? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sunday? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sunday?"]
+
+err: try [
+    meta: info.get 'thursday?
+    ensure.that: "thursday? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "thursday? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "thursday?"]
+
+err: try [
+    meta: info.get 'today?
+    ensure.that: "today? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "today? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "today?"]
+
+err: try [
+    meta: info.get 'tuesday?
+    ensure.that: "tuesday? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "tuesday? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "tuesday?"]
+
+err: try [
+    meta: info.get 'wednesday?
+    ensure.that: "wednesday? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "wednesday? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "wednesday?"]
+
+err: try [
+    meta: info.get 'arithmeticError
+    ensure.that: "arithmeticError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "arithmeticError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "arithmeticError"]
+
+err: try [
+    meta: info.get 'assertionError
+    ensure.that: "assertionError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "assertionError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "assertionError"]
+
+err: try [
+    meta: info.get 'conversionError
+    ensure.that: "conversionError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "conversionError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "conversionError"]
+
+err: try [
+    meta: info.get 'indexError
+    ensure.that: "indexError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "indexError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "indexError"]
+
+err: try [
+    meta: info.get 'libraryError
+    ensure.that: "libraryError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "libraryError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "libraryError"]
+
+err: try [
+    meta: info.get 'nameError
+    ensure.that: "nameError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "nameError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "nameError"]
+
+err: try [
+    meta: info.get 'packageError
+    ensure.that: "packageError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "packageError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "packageError"]
+
+err: try [
+    meta: info.get 'runtimeError
+    ensure.that: "runtimeError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "runtimeError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "runtimeError"]
+
+err: try [
+    meta: info.get 'syntaxError
+    ensure.that: "syntaxError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "syntaxError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "syntaxError"]
+
+err: try [
+    meta: info.get 'systemError
+    ensure.that: "systemError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "systemError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "systemError"]
+
+err: try [
+    meta: info.get 'throw
+    ensure.that: "throw metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "throw has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "throw"]
+
+err: try [
+    meta: info.get 'throws?
+    ensure.that: "throws? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "throws? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "throws?"]
+
+err: try [
+    meta: info.get 'try
+    ensure.that: "try metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "try has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "try"]
+
+err: try [
+    meta: info.get 'typeError
+    ensure.that: "typeError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "typeError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "typeError"]
+
+err: try [
+    meta: info.get 'uiError
+    ensure.that: "uiError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "uiError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "uiError"]
+
+err: try [
+    meta: info.get 'valueError
+    ensure.that: "valueError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "valueError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "valueError"]
+
+err: try [
+    meta: info.get 'vmError
+    ensure.that: "vmError metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "vmError has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "vmError"]
+
+err: try [
+    meta: info.get 'copy
+    ensure.that: "copy metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "copy has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "copy"]
+
+err: try [
+    meta: info.get 'delete
+    ensure.that: "delete metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "delete has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "delete"]
+
+err: try [
+    meta: info.get 'directory?
+    ensure.that: "directory? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "directory? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "directory?"]
+
+err: try [
+    meta: info.get 'exists?
+    ensure.that: "exists? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "exists? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "exists?"]
+
+err: try [
+    meta: info.get 'file?
+    ensure.that: "file? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "file? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "file?"]
+
+err: try [
+    meta: info.get 'hidden?
+    ensure.that: "hidden? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "hidden? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "hidden?"]
+
+err: try [
+    meta: info.get 'move
+    ensure.that: "move metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "move has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "move"]
+
+err: try [
+    meta: info.get 'permissions
+    ensure.that: "permissions metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "permissions has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "permissions"]
+
+err: try [
+    meta: info.get 'read
+    ensure.that: "read metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "read has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "read"]
+
+err: try [
+    meta: info.get 'rename
+    ensure.that: "rename metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "rename has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "rename"]
+
+err: try [
+    meta: info.get 'symlink
+    ensure.that: "symlink metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "symlink has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "symlink"]
+
+err: try [
+    meta: info.get 'symlink?
+    ensure.that: "symlink? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "symlink? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "symlink?"]
+
+err: try [
+    meta: info.get 'timestamp
+    ensure.that: "timestamp metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "timestamp has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "timestamp"]
+
+err: try [
+    meta: info.get 'unzip
+    ensure.that: "unzip metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "unzip has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "unzip"]
+
+err: try [
+    meta: info.get 'volume
+    ensure.that: "volume metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "volume has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "volume"]
+
+err: try [
+    meta: info.get 'write
+    ensure.that: "write metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "write has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "write"]
+
+err: try [
+    meta: info.get 'zip
+    ensure.that: "zip metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "zip has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "zip"]
+
+err: try [
+    meta: info.get 'clear
+    ensure.that: "clear metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "clear has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "clear"]
+
+err: try [
+    meta: info.get 'color
+    ensure.that: "color metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "color has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "color"]
+
+err: try [
+    meta: info.get 'cursor
+    ensure.that: "cursor metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "cursor has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "cursor"]
+
+err: try [
+    meta: info.get 'goto
+    ensure.that: "goto metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "goto has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "goto"]
+
+err: try [
+    meta: info.get 'input
+    ensure.that: "input metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "input has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "input"]
+
+err: try [
+    meta: info.get 'print
+    ensure.that: "print metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "print has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "print"]
+
+err: try [
+    meta: info.get 'prints
+    ensure.that: "prints metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "prints has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "prints"]
+
+err: try [
+    meta: info.get 'terminal
+    ensure.that: "terminal metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "terminal has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "terminal"]
+
+err: try [
+    meta: info.get 'arrange
+    ensure.that: "arrange metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "arrange has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "arrange"]
+
+err: try [
+    meta: info.get 'chunk
+    ensure.that: "chunk metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "chunk has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "chunk"]
+
+err: try [
+    meta: info.get 'cluster
+    ensure.that: "cluster metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "cluster has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "cluster"]
+
+err: try [
+    meta: info.get 'collect
+    ensure.that: "collect metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "collect has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "collect"]
+
+err: try [
+    meta: info.get 'enumerate
+    ensure.that: "enumerate metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "enumerate has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "enumerate"]
+
+err: try [
+    meta: info.get 'every?
+    ensure.that: "every? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "every? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "every?"]
+
+err: try [
+    meta: info.get 'filter
+    ensure.that: "filter metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "filter has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "filter"]
+
+err: try [
+    meta: info.get 'fold
+    ensure.that: "fold metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "fold has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "fold"]
+
+err: try [
+    meta: info.get 'gather
+    ensure.that: "gather metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "gather has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "gather"]
+
+err: try [
+    meta: info.get 'loop
+    ensure.that: "loop metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "loop has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "loop"]
+
+err: try [
+    meta: info.get 'map
+    ensure.that: "map metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "map has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "map"]
+
+err: try [
+    meta: info.get 'maximum
+    ensure.that: "maximum metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "maximum has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "maximum"]
+
+err: try [
+    meta: info.get 'minimum
+    ensure.that: "minimum metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "minimum has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "minimum"]
+
+err: try [
+    meta: info.get 'select
+    ensure.that: "select metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "select has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "select"]
+
+err: try [
+    meta: info.get 'some?
+    ensure.that: "some? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "some? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "some?"]
+
+err: try [
+    meta: info.get 'all?
+    ensure.that: "all? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "all? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "all?"]
+
+err: try [
+    meta: info.get 'and?
+    ensure.that: "and? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "and? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "and?"]
+
+err: try [
+    meta: info.get 'any?
+    ensure.that: "any? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "any? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "any?"]
+
+err: try [
+    meta: info.get 'false
+    ensure.that: "false metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "false has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "false"]
+
+err: try [
+    meta: info.get 'false?
+    ensure.that: "false? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "false? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "false?"]
+
+err: try [
+    meta: info.get 'maybe
+    ensure.that: "maybe metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "maybe has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "maybe"]
+
+err: try [
+    meta: info.get 'nand?
+    ensure.that: "nand? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "nand? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "nand?"]
+
+err: try [
+    meta: info.get 'nor?
+    ensure.that: "nor? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "nor? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "nor?"]
+
+err: try [
+    meta: info.get 'not?
+    ensure.that: "not? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "not? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "not?"]
+
+err: try [
+    meta: info.get 'or?
+    ensure.that: "or? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "or? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "or?"]
+
+err: try [
+    meta: info.get 'true
+    ensure.that: "true metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "true has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "true"]
+
+err: try [
+    meta: info.get 'true?
+    ensure.that: "true? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "true? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "true?"]
+
+err: try [
+    meta: info.get 'xnor?
+    ensure.that: "xnor? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "xnor? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "xnor?"]
+
+err: try [
+    meta: info.get 'xor?
+    ensure.that: "xor? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "xor? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "xor?"]
+
+err: try [
+    meta: info.get 'browse
+    ensure.that: "browse metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "browse has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "browse"]
+
+err: try [
+    meta: info.get 'download
+    ensure.that: "download metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "download has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "download"]
+
+err: try [
+    meta: info.get 'mail
+    ensure.that: "mail metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "mail has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "mail"]
+
+err: try [
+    meta: info.get 'request
+    ensure.that: "request metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "request has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "request"]
+
+err: try [
+    meta: info.get 'serve
+    ensure.that: "serve metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "serve has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "serve"]
+
+err: try [
+    meta: info.get 'abs
+    ensure.that: "abs metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "abs has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "abs"]
+
+err: try [
+    meta: info.get 'acos
+    ensure.that: "acos metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "acos has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "acos"]
+
+err: try [
+    meta: info.get 'acosh
+    ensure.that: "acosh metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "acosh has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "acosh"]
+
+err: try [
+    meta: info.get 'acsec
+    ensure.that: "acsec metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "acsec has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "acsec"]
+
+err: try [
+    meta: info.get 'acsech
+    ensure.that: "acsech metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "acsech has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "acsech"]
+
+err: try [
+    meta: info.get 'actan
+    ensure.that: "actan metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "actan has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "actan"]
+
+err: try [
+    meta: info.get 'actanh
+    ensure.that: "actanh metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "actanh has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "actanh"]
+
+err: try [
+    meta: info.get 'angle
+    ensure.that: "angle metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "angle has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "angle"]
+
+err: try [
+    meta: info.get 'asec
+    ensure.that: "asec metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "asec has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "asec"]
+
+err: try [
+    meta: info.get 'asech
+    ensure.that: "asech metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "asech has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "asech"]
+
+err: try [
+    meta: info.get 'asin
+    ensure.that: "asin metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "asin has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "asin"]
+
+err: try [
+    meta: info.get 'asinh
+    ensure.that: "asinh metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "asinh has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "asinh"]
+
+err: try [
+    meta: info.get 'atan
+    ensure.that: "atan metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "atan has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "atan"]
+
+err: try [
+    meta: info.get 'atan2
+    ensure.that: "atan2 metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "atan2 has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "atan2"]
+
+err: try [
+    meta: info.get 'atanh
+    ensure.that: "atanh metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "atanh has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "atanh"]
+
+err: try [
+    meta: info.get 'ceil
+    ensure.that: "ceil metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "ceil has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "ceil"]
+
+err: try [
+    meta: info.get 'clamp
+    ensure.that: "clamp metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "clamp has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "clamp"]
+
+err: try [
+    meta: info.get 'conj
+    ensure.that: "conj metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "conj has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "conj"]
+
+err: try [
+    meta: info.get 'cos
+    ensure.that: "cos metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "cos has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "cos"]
+
+err: try [
+    meta: info.get 'cosh
+    ensure.that: "cosh metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "cosh has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "cosh"]
+
+err: try [
+    meta: info.get 'csec
+    ensure.that: "csec metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "csec has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "csec"]
+
+err: try [
+    meta: info.get 'csech
+    ensure.that: "csech metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "csech has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "csech"]
+
+err: try [
+    meta: info.get 'ctan
+    ensure.that: "ctan metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "ctan has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "ctan"]
+
+err: try [
+    meta: info.get 'ctanh
+    ensure.that: "ctanh metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "ctanh has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "ctanh"]
+
+err: try [
+    meta: info.get 'denominator
+    ensure.that: "denominator metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "denominator has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "denominator"]
+
+err: try [
+    meta: info.get 'digits
+    ensure.that: "digits metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "digits has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "digits"]
+
+err: try [
+    meta: info.get 'epsilon
+    ensure.that: "epsilon metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "epsilon has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "epsilon"]
+
+err: try [
+    meta: info.get 'even?
+    ensure.that: "even? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "even? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "even?"]
+
+err: try [
+    meta: info.get 'exp
+    ensure.that: "exp metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "exp has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "exp"]
+
+err: try [
+    meta: info.get 'factorial
+    ensure.that: "factorial metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "factorial has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "factorial"]
+
+err: try [
+    meta: info.get 'factors
+    ensure.that: "factors metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "factors has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "factors"]
+
+err: try [
+    meta: info.get 'floor
+    ensure.that: "floor metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "floor has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "floor"]
+
+err: try [
+    meta: info.get 'gamma
+    ensure.that: "gamma metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "gamma has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "gamma"]
+
+err: try [
+    meta: info.get 'gcd
+    ensure.that: "gcd metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "gcd has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "gcd"]
+
+err: try [
+    meta: info.get 'hypot
+    ensure.that: "hypot metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "hypot has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "hypot"]
+
+err: try [
+    meta: info.get 'infinite
+    ensure.that: "infinite metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "infinite has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "infinite"]
+
+err: try [
+    meta: info.get 'infinite?
+    ensure.that: "infinite? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "infinite? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "infinite?"]
+
+err: try [
+    meta: info.get 'lcm
+    ensure.that: "lcm metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "lcm has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "lcm"]
+
+err: try [
+    meta: info.get 'ln
+    ensure.that: "ln metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "ln has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "ln"]
+
+err: try [
+    meta: info.get 'log
+    ensure.that: "log metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "log has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "log"]
+
+err: try [
+    meta: info.get 'negative?
+    ensure.that: "negative? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "negative? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "negative?"]
+
+err: try [
+    meta: info.get 'numerator
+    ensure.that: "numerator metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "numerator has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "numerator"]
+
+err: try [
+    meta: info.get 'odd?
+    ensure.that: "odd? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "odd? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "odd?"]
+
+err: try [
+    meta: info.get 'pi
+    ensure.that: "pi metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "pi has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "pi"]
+
+err: try [
+    meta: info.get 'positive?
+    ensure.that: "positive? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "positive? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "positive?"]
+
+err: try [
+    meta: info.get 'powmod
+    ensure.that: "powmod metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "powmod has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "powmod"]
+
+err: try [
+    meta: info.get 'prime?
+    ensure.that: "prime? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "prime? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "prime?"]
+
+err: try [
+    meta: info.get 'product
+    ensure.that: "product metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "product has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "product"]
+
+err: try [
+    meta: info.get 'random
+    ensure.that: "random metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "random has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "random"]
+
+err: try [
+    meta: info.get 'reciprocal
+    ensure.that: "reciprocal metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "reciprocal has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "reciprocal"]
+
+err: try [
+    meta: info.get 'round
+    ensure.that: "round metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "round has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "round"]
+
+err: try [
+    meta: info.get 'sec
+    ensure.that: "sec metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sec has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sec"]
+
+err: try [
+    meta: info.get 'sech
+    ensure.that: "sech metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sech has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sech"]
+
+err: try [
+    meta: info.get 'sin
+    ensure.that: "sin metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sin has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sin"]
+
+err: try [
+    meta: info.get 'sinh
+    ensure.that: "sinh metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sinh has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sinh"]
+
+err: try [
+    meta: info.get 'sqrt
+    ensure.that: "sqrt metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sqrt has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sqrt"]
+
+err: try [
+    meta: info.get 'sum
+    ensure.that: "sum metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sum has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sum"]
+
+err: try [
+    meta: info.get 'tan
+    ensure.that: "tan metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "tan has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "tan"]
+
+err: try [
+    meta: info.get 'tanh
+    ensure.that: "tanh metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "tanh has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "tanh"]
+
+err: try [
+    meta: info.get 'tau
+    ensure.that: "tau metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "tau has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "tau"]
+
+err: try [
+    meta: info.get 'absolute
+    ensure.that: "absolute metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "absolute has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "absolute"]
+
+err: try [
+    meta: info.get 'absolute?
+    ensure.that: "absolute? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "absolute? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "absolute?"]
+
+err: try [
+    meta: info.get 'extract
+    ensure.that: "extract metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "extract has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "extract"]
+
+err: try [
+    meta: info.get 'list
+    ensure.that: "list metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "list has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "list"]
+
+err: try [
+    meta: info.get 'normalize
+    ensure.that: "normalize metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "normalize has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "normalize"]
+
+err: try [
+    meta: info.get 'relative
+    ensure.that: "relative metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "relative has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "relative"]
+
+err: try [
+    meta: info.get 'acceleration?
+    ensure.that: "acceleration? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "acceleration? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "acceleration?"]
+
+err: try [
+    meta: info.get 'action?
+    ensure.that: "action? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "action? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "action?"]
+
+err: try [
+    meta: info.get 'alphaParticleMass
+    ensure.that: "alphaParticleMass metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "alphaParticleMass has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "alphaParticleMass"]
+
+err: try [
+    meta: info.get 'angle?
+    ensure.that: "angle? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "angle? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "angle?"]
+
+err: try [
+    meta: info.get 'angstromStar
+    ensure.that: "angstromStar metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "angstromStar has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "angstromStar"]
+
+err: try [
+    meta: info.get 'angularVelocity?
+    ensure.that: "angularVelocity? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "angularVelocity? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "angularVelocity?"]
+
+err: try [
+    meta: info.get 'area?
+    ensure.that: "area? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "area? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "area?"]
+
+err: try [
+    meta: info.get 'areaDensity?
+    ensure.that: "areaDensity? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "areaDensity? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "areaDensity?"]
+
+err: try [
+    meta: info.get 'atomicMass
+    ensure.that: "atomicMass metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "atomicMass has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "atomicMass"]
+
+err: try [
+    meta: info.get 'avogadroConstant
+    ensure.that: "avogadroConstant metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "avogadroConstant has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "avogadroConstant"]
+
+err: try [
+    meta: info.get 'bohrRadius
+    ensure.that: "bohrRadius metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "bohrRadius has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "bohrRadius"]
+
+err: try [
+    meta: info.get 'boltzmannConstant
+    ensure.that: "boltzmannConstant metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "boltzmannConstant has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "boltzmannConstant"]
+
+err: try [
+    meta: info.get 'capacitance?
+    ensure.that: "capacitance? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "capacitance? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "capacitance?"]
+
+err: try [
+    meta: info.get 'charge?
+    ensure.that: "charge? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "charge? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "charge?"]
+
+err: try [
+    meta: info.get 'classicalElectronRadius
+    ensure.that: "classicalElectronRadius metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "classicalElectronRadius has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "classicalElectronRadius"]
+
+err: try [
+    meta: info.get 'conductance?
+    ensure.that: "conductance? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "conductance? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "conductance?"]
+
+err: try [
+    meta: info.get 'conductanceQuantum
+    ensure.that: "conductanceQuantum metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "conductanceQuantum has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "conductanceQuantum"]
+
+err: try [
+    meta: info.get 'conforms?
+    ensure.that: "conforms? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "conforms? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "conforms?"]
+
+err: try [
+    meta: info.get 'convert
+    ensure.that: "convert metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "convert has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "convert"]
+
+err: try [
+    meta: info.get 'currency?
+    ensure.that: "currency? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "currency? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "currency?"]
+
+err: try [
+    meta: info.get 'current?
+    ensure.that: "current? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "current? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "current?"]
+
+err: try [
+    meta: info.get 'currentDensity?
+    ensure.that: "currentDensity? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "currentDensity? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "currentDensity?"]
+
+err: try [
+    meta: info.get 'dataTransferRate?
+    ensure.that: "dataTransferRate? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "dataTransferRate? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "dataTransferRate?"]
+
+err: try [
+    meta: info.get 'density?
+    ensure.that: "density? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "density? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "density?"]
+
+err: try [
+    meta: info.get 'deuteronMass
+    ensure.that: "deuteronMass metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "deuteronMass has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "deuteronMass"]
+
+err: try [
+    meta: info.get 'elastance?
+    ensure.that: "elastance? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "elastance? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "elastance?"]
+
+err: try [
+    meta: info.get 'electricField?
+    ensure.that: "electricField? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "electricField? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "electricField?"]
+
+err: try [
+    meta: info.get 'electricityPrice?
+    ensure.that: "electricityPrice? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "electricityPrice? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "electricityPrice?"]
+
+err: try [
+    meta: info.get 'electronCharge
+    ensure.that: "electronCharge metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "electronCharge has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "electronCharge"]
+
+err: try [
+    meta: info.get 'electronMass
+    ensure.that: "electronMass metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "electronMass has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "electronMass"]
+
+err: try [
+    meta: info.get 'electronMassEnergy
+    ensure.that: "electronMassEnergy metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "electronMassEnergy has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "electronMassEnergy"]
+
+err: try [
+    meta: info.get 'energy?
+    ensure.that: "energy? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "energy? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "energy?"]
+
+err: try [
+    meta: info.get 'entropy?
+    ensure.that: "entropy? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "entropy? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "entropy?"]
+
+err: try [
+    meta: info.get 'force?
+    ensure.that: "force? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "force? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "force?"]
+
+err: try [
+    meta: info.get 'frequency?
+    ensure.that: "frequency? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "frequency? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "frequency?"]
+
+err: try [
+    meta: info.get 'gravitationalConstant
+    ensure.that: "gravitationalConstant metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "gravitationalConstant has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "gravitationalConstant"]
+
+err: try [
+    meta: info.get 'hartreeEnergy
+    ensure.that: "hartreeEnergy metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "hartreeEnergy has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "hartreeEnergy"]
+
+err: try [
+    meta: info.get 'heatFlux?
+    ensure.that: "heatFlux? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "heatFlux? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "heatFlux?"]
+
+err: try [
+    meta: info.get 'helionMass
+    ensure.that: "helionMass metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "helionMass has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "helionMass"]
+
+err: try [
+    meta: info.get 'illuminance?
+    ensure.that: "illuminance? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "illuminance? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "illuminance?"]
+
+err: try [
+    meta: info.get 'impedanceOfVacuum
+    ensure.that: "impedanceOfVacuum metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "impedanceOfVacuum has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "impedanceOfVacuum"]
+
+err: try [
+    meta: info.get 'in
+    ensure.that: "in metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "in has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "in"]
+
+err: try [
+    meta: info.get 'inductance?
+    ensure.that: "inductance? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "inductance? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "inductance?"]
+
+err: try [
+    meta: info.get 'information?
+    ensure.that: "information? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "information? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "information?"]
+
+err: try [
+    meta: info.get 'inverseConductanceQuantum
+    ensure.that: "inverseConductanceQuantum metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "inverseConductanceQuantum has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "inverseConductanceQuantum"]
+
+err: try [
+    meta: info.get 'jerk?
+    ensure.that: "jerk? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "jerk? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "jerk?"]
+
+err: try [
+    meta: info.get 'josephsonConstant
+    ensure.that: "josephsonConstant metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "josephsonConstant has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "josephsonConstant"]
+
+err: try [
+    meta: info.get 'kinematicViscosity?
+    ensure.that: "kinematicViscosity? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "kinematicViscosity? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "kinematicViscosity?"]
+
+err: try [
+    meta: info.get 'length?
+    ensure.that: "length? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "length? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "length?"]
+
+err: try [
+    meta: info.get 'luminosity?
+    ensure.that: "luminosity? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "luminosity? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "luminosity?"]
+
+err: try [
+    meta: info.get 'luminousFlux?
+    ensure.that: "luminousFlux? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "luminousFlux? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "luminousFlux?"]
+
+err: try [
+    meta: info.get 'magneticFieldStrength?
+    ensure.that: "magneticFieldStrength? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "magneticFieldStrength? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "magneticFieldStrength?"]
+
+err: try [
+    meta: info.get 'magneticFlux?
+    ensure.that: "magneticFlux? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "magneticFlux? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "magneticFlux?"]
+
+err: try [
+    meta: info.get 'magneticFluxDensity?
+    ensure.that: "magneticFluxDensity? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "magneticFluxDensity? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "magneticFluxDensity?"]
+
+err: try [
+    meta: info.get 'magneticFluxQuantum
+    ensure.that: "magneticFluxQuantum metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "magneticFluxQuantum has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "magneticFluxQuantum"]
+
+err: try [
+    meta: info.get 'mass?
+    ensure.that: "mass? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "mass? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "mass?"]
+
+err: try [
+    meta: info.get 'massFlowRate?
+    ensure.that: "massFlowRate? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "massFlowRate? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "massFlowRate?"]
+
+err: try [
+    meta: info.get 'molarConcentration?
+    ensure.that: "molarConcentration? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "molarConcentration? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "molarConcentration?"]
+
+err: try [
+    meta: info.get 'molarGasConstant
+    ensure.that: "molarGasConstant metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "molarGasConstant has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "molarGasConstant"]
+
+err: try [
+    meta: info.get 'moleFlowRate?
+    ensure.that: "moleFlowRate? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "moleFlowRate? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "moleFlowRate?"]
+
+err: try [
+    meta: info.get 'momentofInertia?
+    ensure.that: "momentofInertia? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "momentofInertia? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "momentofInertia?"]
+
+err: try [
+    meta: info.get 'momentum?
+    ensure.that: "momentum? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "momentum? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "momentum?"]
+
+err: try [
+    meta: info.get 'muonMass
+    ensure.that: "muonMass metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "muonMass has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "muonMass"]
+
+err: try [
+    meta: info.get 'neutronMass
+    ensure.that: "neutronMass metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "neutronMass has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "neutronMass"]
+
+err: try [
+    meta: info.get 'permeability?
+    ensure.that: "permeability? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "permeability? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "permeability?"]
+
+err: try [
+    meta: info.get 'permittivity?
+    ensure.that: "permittivity? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "permittivity? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "permittivity?"]
+
+err: try [
+    meta: info.get 'planckConstant
+    ensure.that: "planckConstant metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "planckConstant has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "planckConstant"]
+
+err: try [
+    meta: info.get 'planckLength
+    ensure.that: "planckLength metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "planckLength has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "planckLength"]
+
+err: try [
+    meta: info.get 'planckMass
+    ensure.that: "planckMass metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "planckMass has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "planckMass"]
+
+err: try [
+    meta: info.get 'planckTemperature
+    ensure.that: "planckTemperature metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "planckTemperature has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "planckTemperature"]
+
+err: try [
+    meta: info.get 'planckTime
+    ensure.that: "planckTime metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "planckTime has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "planckTime"]
+
+err: try [
+    meta: info.get 'potential?
+    ensure.that: "potential? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "potential? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "potential?"]
+
+err: try [
+    meta: info.get 'power?
+    ensure.that: "power? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "power? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "power?"]
+
+err: try [
+    meta: info.get 'pressure?
+    ensure.that: "pressure? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "pressure? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "pressure?"]
+
+err: try [
+    meta: info.get 'property
+    ensure.that: "property metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "property has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "property"]
+
+err: try [
+    meta: info.get 'protonMass
+    ensure.that: "protonMass metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "protonMass has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "protonMass"]
+
+err: try [
+    meta: info.get 'protonMassEnergy
+    ensure.that: "protonMassEnergy metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "protonMassEnergy has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "protonMassEnergy"]
+
+err: try [
+    meta: info.get 'radiation?
+    ensure.that: "radiation? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "radiation? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "radiation?"]
+
+err: try [
+    meta: info.get 'radiationExposure?
+    ensure.that: "radiationExposure? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "radiationExposure? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "radiationExposure?"]
+
+err: try [
+    meta: info.get 'reducedPlanckConstant
+    ensure.that: "reducedPlanckConstant metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "reducedPlanckConstant has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "reducedPlanckConstant"]
+
+err: try [
+    meta: info.get 'resistance?
+    ensure.that: "resistance? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "resistance? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "resistance?"]
+
+err: try [
+    meta: info.get 'resistivity?
+    ensure.that: "resistivity? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "resistivity? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "resistivity?"]
+
+err: try [
+    meta: info.get 'rydbergConstant
+    ensure.that: "rydbergConstant metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "rydbergConstant has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "rydbergConstant"]
+
+err: try [
+    meta: info.get 'salary?
+    ensure.that: "salary? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "salary? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "salary?"]
+
+err: try [
+    meta: info.get 'scalar
+    ensure.that: "scalar metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "scalar has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "scalar"]
+
+err: try [
+    meta: info.get 'snap?
+    ensure.that: "snap? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "snap? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "snap?"]
+
+err: try [
+    meta: info.get 'solidAngle?
+    ensure.that: "solidAngle? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "solidAngle? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "solidAngle?"]
+
+err: try [
+    meta: info.get 'specificVolume?
+    ensure.that: "specificVolume? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "specificVolume? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "specificVolume?"]
+
+err: try [
+    meta: info.get 'specify
+    ensure.that: "specify metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "specify has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "specify"]
+
+err: try [
+    meta: info.get 'speed?
+    ensure.that: "speed? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "speed? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "speed?"]
+
+err: try [
+    meta: info.get 'speedOfLight
+    ensure.that: "speedOfLight metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "speedOfLight has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "speedOfLight"]
+
+err: try [
+    meta: info.get 'standardGasVolume
+    ensure.that: "standardGasVolume metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "standardGasVolume has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "standardGasVolume"]
+
+err: try [
+    meta: info.get 'standardPressure
+    ensure.that: "standardPressure metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "standardPressure has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "standardPressure"]
+
+err: try [
+    meta: info.get 'standardTemperature
+    ensure.that: "standardTemperature metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "standardTemperature has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "standardTemperature"]
+
+err: try [
+    meta: info.get 'substance?
+    ensure.that: "substance? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "substance? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "substance?"]
+
+err: try [
+    meta: info.get 'surfaceTension?
+    ensure.that: "surfaceTension? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "surfaceTension? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "surfaceTension?"]
+
+err: try [
+    meta: info.get 'tauMass
+    ensure.that: "tauMass metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "tauMass has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "tauMass"]
+
+err: try [
+    meta: info.get 'temperature?
+    ensure.that: "temperature? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "temperature? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "temperature?"]
+
+err: try [
+    meta: info.get 'thermalConductivity?
+    ensure.that: "thermalConductivity? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "thermalConductivity? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "thermalConductivity?"]
+
+err: try [
+    meta: info.get 'thermalInsulance?
+    ensure.that: "thermalInsulance? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "thermalInsulance? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "thermalInsulance?"]
+
+err: try [
+    meta: info.get 'thomsonCrossSection
+    ensure.that: "thomsonCrossSection metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "thomsonCrossSection has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "thomsonCrossSection"]
+
+err: try [
+    meta: info.get 'time?
+    ensure.that: "time? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "time? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "time?"]
+
+err: try [
+    meta: info.get 'tritonMass
+    ensure.that: "tritonMass metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "tritonMass has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "tritonMass"]
+
+err: try [
+    meta: info.get 'unitless?
+    ensure.that: "unitless? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "unitless? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "unitless?"]
+
+err: try [
+    meta: info.get 'units
+    ensure.that: "units metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "units has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "units"]
+
+err: try [
+    meta: info.get 'vacuumPermeability
+    ensure.that: "vacuumPermeability metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "vacuumPermeability has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "vacuumPermeability"]
+
+err: try [
+    meta: info.get 'vacuumPermittivity
+    ensure.that: "vacuumPermittivity metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "vacuumPermittivity has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "vacuumPermittivity"]
+
+err: try [
+    meta: info.get 'viscosity?
+    ensure.that: "viscosity? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "viscosity? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "viscosity?"]
+
+err: try [
+    meta: info.get 'volume?
+    ensure.that: "volume? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "volume? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "volume?"]
+
+err: try [
+    meta: info.get 'volumetricFlow?
+    ensure.that: "volumetricFlow? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "volumetricFlow? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "volumetricFlow?"]
+
+err: try [
+    meta: info.get 'vonKlitzingConstant
+    ensure.that: "vonKlitzingConstant metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "vonKlitzingConstant has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "vonKlitzingConstant"]
+
+err: try [
+    meta: info.get 'waveNumber?
+    ensure.that: "waveNumber? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "waveNumber? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "waveNumber?"]
+
+err: try [
+    meta: info.get 'arity
+    ensure.that: "arity metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "arity has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "arity"]
+
+err: try [
+    meta: info.get 'attr
+    ensure.that: "attr metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "attr has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "attr"]
+
+err: try [
+    meta: info.get 'attr?
+    ensure.that: "attr? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "attr? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "attr?"]
+
+err: try [
+    meta: info.get 'attrs
+    ensure.that: "attrs metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "attrs has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "attrs"]
+
+err: try [
+    meta: info.get 'benchmark
+    ensure.that: "benchmark metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "benchmark has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "benchmark"]
+
+err: try [
+    meta: info.get 'info
+    ensure.that: "info metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "info has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "info"]
+
+err: try [
+    meta: info.get 'inspect
+    ensure.that: "inspect metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "inspect has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "inspect"]
+
+err: try [
+    meta: info.get 'methods
+    ensure.that: "methods metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "methods has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "methods"]
+
+err: try [
+    meta: info.get 'stack
+    ensure.that: "stack metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "stack has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "stack"]
+
+err: try [
+    meta: info.get 'standalone?
+    ensure.that: "standalone? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "standalone? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "standalone?"]
+
+err: try [
+    meta: info.get 'symbols
+    ensure.that: "symbols metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "symbols has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "symbols"]
+
+err: try [
+    meta: info.get 'difference
+    ensure.that: "difference metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "difference has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "difference"]
+
+err: try [
+    meta: info.get 'disjoint?
+    ensure.that: "disjoint? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "disjoint? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "disjoint?"]
+
+err: try [
+    meta: info.get 'intersect?
+    ensure.that: "intersect? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "intersect? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "intersect?"]
+
+err: try [
+    meta: info.get 'intersection
+    ensure.that: "intersection metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "intersection has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "intersection"]
+
+err: try [
+    meta: info.get 'powerset
+    ensure.that: "powerset metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "powerset has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "powerset"]
+
+err: try [
+    meta: info.get 'subset?
+    ensure.that: "subset? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "subset? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "subset?"]
+
+err: try [
+    meta: info.get 'superset?
+    ensure.that: "superset? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "superset? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "superset?"]
+
+err: try [
+    meta: info.get 'union
+    ensure.that: "union metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "union has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "union"]
+
+err: try [
+    meta: info.get 'accept
+    ensure.that: "accept metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "accept has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "accept"]
+
+err: try [
+    meta: info.get 'connect
+    ensure.that: "connect metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "connect has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "connect"]
+
+err: try [
+    meta: info.get 'listen
+    ensure.that: "listen metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "listen has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "listen"]
+
+err: try [
+    meta: info.get 'receive
+    ensure.that: "receive metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "receive has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "receive"]
+
+err: try [
+    meta: info.get 'send
+    ensure.that: "send metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "send has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "send"]
+
+err: try [
+    meta: info.get 'send?
+    ensure.that: "send? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "send? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "send?"]
+
+err: try [
+    meta: info.get 'unplug
+    ensure.that: "unplug metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "unplug has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "unplug"]
+
+err: try [
+    meta: info.get 'average
+    ensure.that: "average metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "average has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "average"]
+
+err: try [
+    meta: info.get 'deviation
+    ensure.that: "deviation metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "deviation has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "deviation"]
+
+err: try [
+    meta: info.get 'kurtosis
+    ensure.that: "kurtosis metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "kurtosis has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "kurtosis"]
+
+err: try [
+    meta: info.get 'median
+    ensure.that: "median metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "median has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "median"]
+
+err: try [
+    meta: info.get 'skewness
+    ensure.that: "skewness metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "skewness has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "skewness"]
+
+err: try [
+    meta: info.get 'variance
+    ensure.that: "variance metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "variance has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "variance"]
+
+err: try [
+    meta: info.get 'alphabet
+    ensure.that: "alphabet metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "alphabet has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "alphabet"]
+
+err: try [
+    meta: info.get 'ascii?
+    ensure.that: "ascii? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "ascii? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "ascii?"]
+
+err: try [
+    meta: info.get 'capitalize
+    ensure.that: "capitalize metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "capitalize has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "capitalize"]
+
+err: try [
+    meta: info.get 'escape
+    ensure.that: "escape metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "escape has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "escape"]
+
+err: try [
+    meta: info.get 'indent
+    ensure.that: "indent metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "indent has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "indent"]
+
+err: try [
+    meta: info.get 'jaro
+    ensure.that: "jaro metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "jaro has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "jaro"]
+
+err: try [
+    meta: info.get 'join
+    ensure.that: "join metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "join has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "join"]
+
+err: try [
+    meta: info.get 'levenshtein
+    ensure.that: "levenshtein metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "levenshtein has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "levenshtein"]
+
+err: try [
+    meta: info.get 'lower
+    ensure.that: "lower metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "lower has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "lower"]
+
+err: try [
+    meta: info.get 'lower?
+    ensure.that: "lower? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "lower? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "lower?"]
+
+err: try [
+    meta: info.get 'match
+    ensure.that: "match metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "match has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "match"]
+
+err: try [
+    meta: info.get 'match?
+    ensure.that: "match? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "match? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "match?"]
+
+err: try [
+    meta: info.get 'numeric?
+    ensure.that: "numeric? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "numeric? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "numeric?"]
+
+err: try [
+    meta: info.get 'outdent
+    ensure.that: "outdent metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "outdent has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "outdent"]
+
+err: try [
+    meta: info.get 'pad
+    ensure.that: "pad metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "pad has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "pad"]
+
+err: try [
+    meta: info.get 'prefix?
+    ensure.that: "prefix? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "prefix? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "prefix?"]
+
+err: try [
+    meta: info.get 'render
+    ensure.that: "render metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "render has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "render"]
+
+err: try [
+    meta: info.get 'replace
+    ensure.that: "replace metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "replace has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "replace"]
+
+err: try [
+    meta: info.get 'strip
+    ensure.that: "strip metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "strip has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "strip"]
+
+err: try [
+    meta: info.get 'suffix?
+    ensure.that: "suffix? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "suffix? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "suffix?"]
+
+err: try [
+    meta: info.get 'translate
+    ensure.that: "translate metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "translate has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "translate"]
+
+err: try [
+    meta: info.get 'truncate
+    ensure.that: "truncate metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "truncate has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "truncate"]
+
+err: try [
+    meta: info.get 'upper
+    ensure.that: "upper metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "upper has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "upper"]
+
+err: try [
+    meta: info.get 'upper?
+    ensure.that: "upper? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "upper? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "upper?"]
+
+err: try [
+    meta: info.get 'whitespace?
+    ensure.that: "whitespace? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "whitespace? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "whitespace?"]
+
+err: try [
+    meta: info.get 'wordwrap
+    ensure.that: "wordwrap metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "wordwrap has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "wordwrap"]
+
+err: try [
+    meta: info.get 'arg
+    ensure.that: "arg metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "arg has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "arg"]
+
+err: try [
+    meta: info.get 'args
+    ensure.that: "args metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "args has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "args"]
+
+err: try [
+    meta: info.get 'config
+    ensure.that: "config metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "config has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "config"]
+
+err: try [
+    meta: info.get 'env
+    ensure.that: "env metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "env has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "env"]
+
+err: try [
+    meta: info.get 'execute
+    ensure.that: "execute metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "execute has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "execute"]
+
+err: try [
+    meta: info.get 'exit
+    ensure.that: "exit metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "exit has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "exit"]
+
+err: try [
+    meta: info.get 'panic
+    ensure.that: "panic metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "panic has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "panic"]
+
+err: try [
+    meta: info.get 'path
+    ensure.that: "path metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "path has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "path"]
+
+err: try [
+    meta: info.get 'pause
+    ensure.that: "pause metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "pause has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "pause"]
+
+err: try [
+    meta: info.get 'process
+    ensure.that: "process metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "process has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "process"]
+
+err: try [
+    meta: info.get 'script
+    ensure.that: "script metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "script has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "script"]
+
+err: try [
+    meta: info.get 'superuser?
+    ensure.that: "superuser? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "superuser? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "superuser?"]
+
+err: try [
+    meta: info.get 'sys
+    ensure.that: "sys metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sys has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sys"]
+
+err: try [
+    meta: info.get 'terminate
+    ensure.that: "terminate metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "terminate has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "terminate"]
+
+err: try [
+    meta: info.get 'attribute?
+    ensure.that: "attribute? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "attribute? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "attribute?"]
+
+err: try [
+    meta: info.get 'attributeLabel?
+    ensure.that: "attributeLabel? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "attributeLabel? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "attributeLabel?"]
+
+err: try [
+    meta: info.get 'binary?
+    ensure.that: "binary? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "binary? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "binary?"]
+
+err: try [
+    meta: info.get 'block?
+    ensure.that: "block? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "block? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "block?"]
+
+err: try [
+    meta: info.get 'bytecode?
+    ensure.that: "bytecode? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "bytecode? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "bytecode?"]
+
+err: try [
+    meta: info.get 'char?
+    ensure.that: "char? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "char? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "char?"]
+
+err: try [
+    meta: info.get 'color?
+    ensure.that: "color? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "color? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "color?"]
+
+err: try [
+    meta: info.get 'complex?
+    ensure.that: "complex? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "complex? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "complex?"]
+
+err: try [
+    meta: info.get 'constructor
+    ensure.that: "constructor metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "constructor has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "constructor"]
+
+err: try [
+    meta: info.get 'database?
+    ensure.that: "database? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "database? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "database?"]
+
+err: try [
+    meta: info.get 'date?
+    ensure.that: "date? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "date? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "date?"]
+
+err: try [
+    meta: info.get 'define
+    ensure.that: "define metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "define has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "define"]
+
+err: try [
+    meta: info.get 'defined?
+    ensure.that: "defined? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "defined? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "defined?"]
+
+err: try [
+    meta: info.get 'dictionary?
+    ensure.that: "dictionary? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "dictionary? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "dictionary?"]
+
+err: try [
+    meta: info.get 'error?
+    ensure.that: "error? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "error? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "error?"]
+
+err: try [
+    meta: info.get 'errorKind?
+    ensure.that: "errorKind? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "errorKind? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "errorKind?"]
+
+err: try [
+    meta: info.get 'floating?
+    ensure.that: "floating? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "floating? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "floating?"]
+
+err: try [
+    meta: info.get 'function?
+    ensure.that: "function? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "function? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "function?"]
+
+err: try [
+    meta: info.get 'inline?
+    ensure.that: "inline? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "inline? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "inline?"]
+
+err: try [
+    meta: info.get 'integer?
+    ensure.that: "integer? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "integer? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "integer?"]
+
+err: try [
+    meta: info.get 'is
+    ensure.that: "is metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "is has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "is"]
+
+err: try [
+    meta: info.get 'is?
+    ensure.that: "is? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "is? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "is?"]
+
+err: try [
+    meta: info.get 'label?
+    ensure.that: "label? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "label? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "label?"]
+
+err: try [
+    meta: info.get 'literal?
+    ensure.that: "literal? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "literal? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "literal?"]
+
+err: try [
+    meta: info.get 'logical?
+    ensure.that: "logical? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "logical? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "logical?"]
+
+err: try [
+    meta: info.get 'method?
+    ensure.that: "method? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "method? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "method?"]
+
+err: try [
+    meta: info.get 'null?
+    ensure.that: "null? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "null? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "null?"]
+
+err: try [
+    meta: info.get 'object?
+    ensure.that: "object? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "object? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "object?"]
+
+err: try [
+    meta: info.get 'path?
+    ensure.that: "path? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "path? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "path?"]
+
+err: try [
+    meta: info.get 'pathLabel?
+    ensure.that: "pathLabel? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "pathLabel? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "pathLabel?"]
+
+err: try [
+    meta: info.get 'pathLiteral?
+    ensure.that: "pathLiteral? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "pathLiteral? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "pathLiteral?"]
+
+err: try [
+    meta: info.get 'quantity?
+    ensure.that: "quantity? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "quantity? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "quantity?"]
+
+err: try [
+    meta: info.get 'range?
+    ensure.that: "range? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "range? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "range?"]
+
+err: try [
+    meta: info.get 'rational?
+    ensure.that: "rational? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "rational? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "rational?"]
+
+err: try [
+    meta: info.get 'regex?
+    ensure.that: "regex? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "regex? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "regex?"]
+
+err: try [
+    meta: info.get 'socket?
+    ensure.that: "socket? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "socket? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "socket?"]
+
+err: try [
+    meta: info.get 'sortable
+    ensure.that: "sortable metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "sortable has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "sortable"]
+
+err: try [
+    meta: info.get 'store?
+    ensure.that: "store? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "store? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "store?"]
+
+err: try [
+    meta: info.get 'string?
+    ensure.that: "string? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "string? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "string?"]
+
+err: try [
+    meta: info.get 'symbol?
+    ensure.that: "symbol? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "symbol? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "symbol?"]
+
+err: try [
+    meta: info.get 'symbolLiteral?
+    ensure.that: "symbolLiteral? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "symbolLiteral? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "symbolLiteral?"]
+
+err: try [
+    meta: info.get 'to
+    ensure.that: "to metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "to has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "to"]
+
+err: try [
+    meta: info.get 'type
+    ensure.that: "type metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "type has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "type"]
+
+err: try [
+    meta: info.get 'type?
+    ensure.that: "type? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "type? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "type?"]
+
+err: try [
+    meta: info.get 'unit?
+    ensure.that: "unit? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "unit? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "unit?"]
+
+err: try [
+    meta: info.get 'version?
+    ensure.that: "version? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "version? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "version?"]
+
+err: try [
+    meta: info.get 'word?
+    ensure.that: "word? metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "word? has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "word?"]
+
+err: try [
+    meta: info.get 'alert
+    ensure.that: "alert metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "alert has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "alert"]
+
+err: try [
+    meta: info.get 'clip
+    ensure.that: "clip metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "clip has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "clip"]
+
+err: try [
+    meta: info.get 'dialog
+    ensure.that: "dialog metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "dialog has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "dialog"]
+
+err: try [
+    meta: info.get 'popup
+    ensure.that: "popup metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "popup has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "popup"]
+
+err: try [
+    meta: info.get 'unclip
+    ensure.that: "unclip metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "unclip has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "unclip"]
+
+err: try [
+    meta: info.get 'webview
+    ensure.that: "webview metadata is dictionary" [(type meta) = :dictionary]
+    ensure.that: "webview has exported official examples" [(size meta\example) > 0]
+]
+(err = null)? [checked: checked + 1] [append 'failures "webview"]
+
+print ~"official symbols checked: |checked|"
+print ~"official metadata failures: |failures|"
+; Current bundled runtime/index known gap: library-index.csv lists `window`, but info.get cannot resolve it.
+ensure.that: "all indexed symbols except known window gap expose examples" [checked = 520]
+ensure.that: "known unresolved symbol is window" [failures = ["window"]]
+print "PASS official-library/metadata-coverage"

@@ -1,0 +1,11 @@
+# Optional local checkout/cache of upstream skill. Do not commit it.
+skills/
+.arturo-skill/
+.tmp/
+
+# Local run artifacts
+*.log
+
+# Arturo test scratch files if a future test writes inside repo
+tests/**/.tmp/
+*.db

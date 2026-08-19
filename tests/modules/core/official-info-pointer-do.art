@@ -1,0 +1,22 @@
+; Module area: Core / language meta-capabilities
+; Source style: verified from `info.get`, `var`, `let`, `do`, and literal-pointer rules.
+
+meta: info.get 'map
+ensure.that: "info.get returns metadata dictionary" [(type meta) = :dictionary]
+ensure.that: "metadata module" [(meta\module) = "Iterators"]
+ensure.that: "examples are embedded" [(size meta\example) > 0]
+
+value: 40
+ptr: 'value
+ensure.that: "literal is a pointer-like value" [(type ptr) = :literal]
+ensure.that: "var dereferences literal" [(var ptr) = 40]
+let ptr 41
+ensure.that: "let writes through literal" [value = 41]
+inc 'value
+ensure.that: "inc mutates literal target" [value = 42]
+
+code: [result: 6 * 7]
+do code
+ensure.that: "do executes code block" [result = 42]
+
+print "PASS core/official-info-pointer-do"
