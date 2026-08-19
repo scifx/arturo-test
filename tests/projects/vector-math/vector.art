@@ -1,98 +1,63 @@
-; Official-function focus: module, method.public, export, function,
-; couple, map, fold, hypot, throw, standalone?.
+; Vector package entry — Arturo analogue of Python __init__.py.
+; Official-function focus: module.with, init, method.public, export,
+; import.lean, this\name, standalone?.
 ;
-; Pattern from official `module` docs + agent-shell.art file import:
-;   - helpers live in the module as function
-;   - sibling calls use \name
+; Helpers live in ops.art. This file only wraps them:
+;   - init does this\ops: import.lean ./{ops}!
+;   - calls use this\ops\pairAdd and this\vecScale
+;     (\name is shorthand for this\name; prefer this\name when writing)
 ;   - only method.public is exported
 ;   - do not name a public method add/sub; that shadows arithmetic
-;
-; Vectors are blocks of :integer / :floating. Do not write [-1 2]:
-; that block contains the symbol `-`. Use @[neg 1 2].
 
-vector: module [
-    numericValue?: function [x][
-        or? integer? x floating? x
-    ]
-
-    ensurePair: function [left :block right :block][
-        unless (size left) = size right [
-            throw "vector size mismatch"
-        ]
-        unless every? left 'x [\numericValue? x] [
-            throw "left vector is not numeric"
-        ]
-        unless every? right 'x [\numericValue? x] [
-            throw "right vector is not numeric"
-        ]
-    ]
-
-    ensureOne: function [v :block][
-        unless every? v 'x [\numericValue? x] [
-            throw "vector is not numeric"
-        ]
-    ]
-
-    pairAdd: function [pair][
-        (get pair 0) + get pair 1
-    ]
-
-    pairSub: function [pair][
-        (get pair 0) - get pair 1
-    ]
-
-    pairMul: function [pair][
-        (get pair 0) * get pair 1
-    ]
-
-    almostEqual?: function [x y][
-        0.0000001 > abs (x - y)
+vector: module.with: [] [
+    init: method [][
+        this\ops: import.lean ./{ops}!
     ]
 
     vecAdd: method.public [left :block right :block][
-        \ensurePair left right
+        this\ops\ensurePair left right
         map couple left right 'p [
-            \pairAdd p
+            this\ops\pairAdd p
         ]
     ]
 
     vecSub: method.public [left :block right :block][
-        \ensurePair left right
+        this\ops\ensurePair left right
         map couple left right 'p [
-            \pairSub p
+            this\ops\pairSub p
         ]
     ]
 
     vecScale: method.public [v :block k][
-        \ensureOne v
-        unless \numericValue? k [
+        this\ops\ensureOne v
+        unless (this\ops\numericValue? k) [
             throw "scale factor is not numeric"
         ]
         map v 'x [x * k]
     ]
 
     vecNeg: method.public [v :block][
-        \vecScale v neg 1
+        this\vecScale v neg 1
     ]
 
     vecDot: method.public [left :block right :block][
-        \ensurePair left right
+        this\ops\ensurePair left right
         fold.seed:0 couple left right [acc p][
-            acc + \pairMul p
+            acc + (this\ops\pairMul p)
         ]
     ]
 
     vecMag: method.public [v :block][
-        \ensureOne v
+        this\ops\ensureOne v
         (2 = size v)? [
             hypot get v 0 get v 1
         ] [
-            sqrt \vecDot v v
+            sqrt this\vecDot v v
         ]
     ]
 
     vecNormalize: method.public [v :block][
-        mag: \vecMag v
+        mag: this\vecMag v
         (0 = mag)? [
             throw "cannot normalize a zero vector"
         ] [
@@ -104,7 +69,7 @@ vector: module [
         unless and? (3 = size left) (3 = size right) [
             throw "cross product needs two 3D vectors"
         ]
-        \ensurePair left right
+        this\ops\ensurePair left right
         ax: get left 0
         ay: get left 1
         az: get left 2
@@ -119,13 +84,13 @@ vector: module [
     ]
 
     vecDistance: method.public [left :block right :block][
-        \vecMag \vecSub left right
+        this\vecMag this\vecSub left right
     ]
 
     vecAlmostEqual?: method.public [left :block right :block][
         and? ((size left) = size right)
              every? couple left right 'p [
-                \almostEqual? get p 0 get p 1
+                this\ops\almostEqual? get p 0 get p 1
              ]
     ]
 ]
@@ -135,8 +100,8 @@ export vector!
 if standalone? [
     ensure.that: "module value stays bound" [(type vector) = :module]
     ensure.that: "public method is exported" [set? 'vecAdd]
-    ensure.that: "private function is not exported" [not? set? 'ensurePair]
-    ensure.that: "private pairAdd is not exported" [not? set? 'pairAdd]
+    ensure.that: "ops helpers are not file-global" [not? set? 'pairAdd]
+    ensure.that: "lean submodule is not file-global" [not? set? 'ops]
     ensure.that: "exporting vecAdd does not shadow +" [3 = 1 + 2]
 
     ensure.that: "add pairs by couple order" [[5 7 9] = vecAdd [1 2 3] [4 5 6]]

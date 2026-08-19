@@ -48,5 +48,7 @@ ensure.that: "triangle normal is 2D cross as z" [[0 0 12] = roundtrip\triangle\n
 ensure.that: "triangle area is half the parallelogram" [6.0 = roundtrip\triangle\area]
 ensure.that: "distance origin to 3-4" [5.0 = vecDistance [0 0] [3 4]]
 ensure.that: "imported mismatch still throws" [throws? [vecAdd [1 2] [1]]]
+ensure.that: "package helpers stay off the caller scope" [not? set? 'pairAdd]
+ensure.that: "lean ops binding stays off the caller scope" [not? set? 'ops]
 
 print "PASS projects/vector-math"

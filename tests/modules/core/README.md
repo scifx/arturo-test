@@ -8,7 +8,9 @@
 |---|---|---|
 | `official-info-pointer-do.art` | `info.get` 元数据、官方 example 字段、`'literal` / `var` / `let` 指针模型、`do` 执行块 | skill 的核心查字典流程与官方 runtime 元数据 |
 | `attribute-default-helper.art` | 属性栈、`attr`、`??`、`function.inline`、placeholder 默认参数模式 | `arturo-language-skill` 中 issue #2136 经验 |
-| `module-export.art` | `module`、内部 `function`、`method.public`、`export`、`set?`、`\name` 互调 | 官方 `module`/`export` 示例 + `tests/projects/vector-math` 浓缩 |
+| `module-export.art` | `module`、内部 `function`、`method.public`、`export`、`this\name` | 官方 `module`/`export` + 矢量项目 |
+| `module-helpers.art` | 给 scope-import 用的外部函数 | 包结构里的 submodule |
+| `module-scope-import.art` | `module.with`、`init`、`import.lean`、`this\helpers\bang` | 对标 Python `__init__.py` |
 
 ## 运行
 

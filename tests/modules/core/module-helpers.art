@@ -1,0 +1,10 @@
+; Helpers for module-scope-import.art. Not a public module API.
+
+bang: function [s :string][
+    ~"|s|!"
+]
+
+if standalone? [
+    ensure.that: "helper works alone" ["Ada!" = bang "Ada"]
+    print "PASS core/module-helpers"
+]

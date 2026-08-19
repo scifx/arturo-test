@@ -19,7 +19,7 @@ export box!
 ensure.that: "module value remains bound" [(type box) = :module]
 ensure.that: "public method is exported" [set? 'greet]
 ensure.that: "private function is not exported" [not? set? 'bang]
-ensure.that: "method calls sibling function with backslash" [
+ensure.that: "method calls sibling function with this\\name" [
     "hi Ada!" = greet "Ada"
 ]
 ensure.that: "export does not remove the module itself" [set? 'box]
