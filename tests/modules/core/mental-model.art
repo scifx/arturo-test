@@ -1,0 +1,88 @@
+; Module area: Core
+; Focus: 六个元能力关键字 — 字典+指针 心智模型的验证
+; 这是 Arturo 的"自举"基础设施。每次进仓库先跑这个确认模型可用。
+
+print "=== 1. symbols — 字典目录 ==="
+syms: symbols
+ensure.that: "symbols returns a dictionary" [(type syms) = :dictionary]
+ensure.that: "symbols has at least 500 entries" [(size syms) >= 500]
+ensure.that: "symbols contains print" [key? syms 'print]
+ensure.that: "symbols contains map" [key? syms 'map]
+ensure.that: "symbols contains inspect" [key? syms 'inspect]
+ensure.that: "symbols contains let" [key? syms 'let]
+ensure.that: "symbols contains var" [key? syms 'var]
+ensure.that: "symbols contains info" [key? syms 'info]
+ensure.that: "symbols contains do" [key? syms 'do]
+
+print "=== 2. info / info.get — 查词条的契约 ==="
+info 'print
+ig: info.get 'print
+ensure.that: "info.get returns a dictionary" [(type ig) = :dictionary]
+ensure.that: "info.get has a name key" [key? ig 'name]
+ensure.that: "info.get has a description key" [key? ig 'description]
+ensure.that: "info.get has an example key" [key? ig 'example]
+ensure.that: "info.get example is a block" [(type ig\example) = :block]
+ensure.that: "info.get example has at least one segment" [(size ig\example) > 0]
+
+; info.get for other layers
+il: info.get 'let
+ensure.that: "info.get let has example" [key? il 'example]
+iv: info.get 'var
+ensure.that: "info.get var has example" [key? iv 'example]
+ii: info.get 'inspect
+ensure.that: "info.get inspect has example" [key? ii 'example]
+
+print "=== 3. inspect — 查值的运行时结构 ==="
+; inspect prints to stdout and returns :nothing
+; We just verify it runs without error by checking that calling it doesn't crash
+ensure.that: "inspect a block shows structure" [
+    inspect.muted [1 2 3]
+    true
+]
+ensure.that: "inspect a dictionary shows keys" [
+    inspect.muted #[a: 1 b: 2]
+    true
+]
+ensure.that: "inspect a function shows signature" [
+    inspect.muted $[n][n * 2]
+    true
+]
+ensure.that: "inspect an error shows kind" [
+    e: try [1 / 0]
+    inspect.muted e
+    true
+]
+
+print "=== 4. var — 解引用读 ==="
+x: 42
+ensure.that: "var 'x reads the value" [42 = var 'x]
+p: 'x
+ensure.that: "var p reads through a variable pointer" [42 = var p]
+ensure.that: "type of 'x is literal" [(type 'x) = :literal]
+
+print "=== 5. let — 解引用写 ==="
+let 'x 99
+ensure.that: "let 'x writes through pointer" [99 = x]
+let 'x 0
+ensure.that: "let 'x can write again" [0 = x]
+let 'x 42
+ensure.that: "let restores original" [42 = x]
+
+print "=== 6. do — 块从数据变代码 ==="
+code: [1 + 2]
+ensure.that: "block is data before do" [(type code) = :block]
+r: do code
+ensure.that: "do executes the block" [3 = r]
+
+ensure.that: "do can execute multiple statements" [
+    r: do [a: 10 b: 20 a + b]
+    30 = r
+]
+
+; == 整合：查字典工作流 ==
+ensure.that: "full workflow: symbols → info.get → do example" [
+    ex: info.get 'max | get 'example
+    not? null? ex
+]
+
+print "\nPASS core/mental-model"

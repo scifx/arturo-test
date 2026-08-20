@@ -1,36 +1,106 @@
 ; Module area: Strings
-; Source: https://arturo-lang.io/documentation/library/strings
+; Source: https://arturo-lang.io/documentation/library/strings (web overview)
+; Covers: string creation, basic ops, pattern matching, common patterns,
+; working with parts, string templates.
 
+; ---- String Creation ----
+ensure.that: "++ concatenation" ["hello world" = "hello " ++ "world"]
+
+; ---- Basic Operations ----
 ensure.that: "upper" ["HELLO" = upper "hello"]
 ensure.that: "lower" ["world" = lower "WORLD"]
-ensure.that: "capitalize" ["John" = capitalize "john"]
+ensure.that: "capitalize" ["Hello World" = capitalize "hello World"]
+ensure.that: "capitalize mutates" [
+    s: "hello World"
+    capitalize 's
+    "Hello World" = s
+]
 ensure.that: "prefix?" [prefix? "hello" "he"]
+ensure.that: "prefix? false" [not? prefix? "boom" "he"]
 ensure.that: "suffix?" [suffix? "hello" "lo"]
+ensure.that: "suffix? false" [not? suffix? "boom" "lo"]
 ensure.that: "contains?" [contains? "hello" "ll"]
 ensure.that: "strip" ["hello" = strip " hello  "]
-ensure.that: "upper? works on this runtime" [upper? "HELLO"]
-ensure.that: "lower?" [lower? "hello"]
-ensure.that: "ascii?" [ascii? "hello"]
-ensure.that: "numeric? of digits" [numeric? "123"]
-ensure.that: "join.with" ["a, b, c" = join.with: ", " ["a" "b" "c"]]
-ensure.that: "slice 0 4 of hello world" ["hello" = slice "hello world" 0 4]
+ensure.that: "strip.start" ["hi" = strip.start "  hi"]
+ensure.that: "strip.end" ["hi" = strip.end "hi  "]
 
-name: "Bill"
-age: 38
-ensure.that: "tilde interpolates name" ["Hello Bill!" = ~"Hello |name|!"]
-ensure.that: "tilde interpolates expression" [
+; ---- Pattern Matching ----
+ensure.that: "match returns block" [
+    ["o world"] = match "hello world" {/o(.+)d/}
+]
+ensure.that: "match.capture" [
+    ["ll" "w"] = match.capture "hello world" {/([wrl]+)o/}
+]
+ensure.that: "replace literal" ["hello there" = replace "hi there" "hi" "hello"]
+ensure.that: "replace regex" [
+    "Date: 2025" = replace "Date: 2024" {/\d+/} "2025"
+]
+
+; ---- Common Patterns: wordwrap ----
+ensure.that: "wordwrap.at" [
+    lines: split.lines wordwrap.at: 20 "This is a very long line that needs to be wrapped"
+    and? (contains? (first lines) "This is") ((size lines) > 1)
+]
+
+; ---- Common Patterns: truncate ----
+ensure.that: "truncate 5 includes space before dots" [
+    "Hello ..." = truncate "Hello World" 5
+]
+ensure.that: "truncate.with has space before marker" [
+    "Hello ---" = truncate.with:"---" "Hello World" 5
+]
+ensure.that: "truncate.preserve.with no space" [
+    "Hello---" = truncate.preserve.with:"---" "Hello World" 5
+]
+
+; ---- Common Patterns: padding ----
+ensure.that: "pad.right" ["Price:    " = pad.right "Price:" 10]
+ensure.that: "pad.center exact length" [20 = size pad.center "Title" 20]
+
+; ---- Working with Parts ----
+ensure.that: "split.words" [
+    ["hello" "world"] = split.words "hello world"
+]
+ensure.that: "join.with" ["a, b, c" = join.with: ", " ["a" "b" "c"]]
+ensure.that: "slice" ["hello" = slice "hello world" 0 4]
+
+; ---- String Templates: ~ interpolation ----
+ensure.that: "tilde interpolation" [
+    name: "Bill"
+    "Hello Bill!" = ~"Hello |name|!"
+]
+ensure.that: "tilde expression" [
+    age: 38
     "Next year I'll be 39" = ~"Next year I'll be |age + 1|"
 ]
 
-ensure.that: "match returns a block, not a bare string" [
-    ["o world"] = match "hello world" {/o(.+)d/}
+; ---- String Templates: render.template conditional ----
+ensure.that: "render.template conditional" [
+    age: 30
+    template: {
+        <||= (age > 21)? [ ||>\
+            You can enter the club\
+        <||][||>\
+            Sorry, too young\
+        <||]||>
+    }
+    contains? (render.template template) "enter the club"
 ]
-ensure.that: "replace literal" ["hello there" = replace "hi there" "hi" "hello"]
-ensure.that: "replace regex digits" [
-    "Date: 2025" = replace "Date: 2024" {/\d+/} "2025"
-]
-ensure.that: "truncate 5 keeps a space before dots" [
-    "Hello ..." = truncate "Hello World" 5
+
+; ---- String Templates: render.template loop ----
+ensure.that: "render.template loop" [
+    items: ["apple" "banana"]
+    template: {
+        <ul>
+            <|| loop items 'item [||>\
+                <li>\
+                    <||= item ||>\
+                </li>\
+            <||]||>
+        </ul>
+    }
+    result: render.template template
+    and? (contains? result "apple") (contains? result "banana")
 ]
 
 print "PASS strings/chapter-overview"

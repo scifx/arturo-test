@@ -1,0 +1,154 @@
+; Module area: Strings — manipulation (strip/pad/truncate/wordwrap/escape/
+; indent/outdent/translate/alphabet/jaro/levenshtein/join/split/slice/render)
+; Source: official docs + runtime verification
+
+; ---- alphabet ----
+ensure.that: "alphabet espanol size 27" [
+    27 = size alphabet 'es
+]
+ensure.that: "alphabet es contains ñ" [
+    in? (first "ñ") alphabet 'es
+]
+ensure.that: "alphabet upper contains Ñ" [
+    in? (first "Ñ") alphabet.upper 'es
+]
+
+; ---- strip ----
+ensure.that: "strip both" ["Hello World" = strip "  Hello World  "]
+ensure.that: "strip.start" ["Hello World  " = strip.start "  Hello World  "]
+ensure.that: "strip.end" ["  Hello World" = strip.end "  Hello World  "]
+
+; ---- pad ----
+ensure.that: "pad left" ["      good" = pad "good" 10]
+ensure.that: "pad.right" ["good      " = pad.right "good" 10]
+ensure.that: "pad.center" ["   good   " = pad.center "good" 10]
+ensure.that: "pad mutates" [
+    a: "hello"
+    pad 'a 10
+    "     hello" = a
+]
+ensure.that: "pad.with char zero pads" [
+    "00123" = pad.with: (first "0") to :string 123 5
+]
+
+; ---- truncate ----
+ensure.that: "truncate plain" ["Hello ..." = truncate "Hello World" 5]
+ensure.that: "truncate.preserve" ["Hello..." = truncate.preserve "Hello World" 5]
+ensure.that: "truncate.with space before marker" [
+    "Hello ---" = truncate.with:"---" "Hello World" 5
+]
+ensure.that: "truncate.preserve.with no space" [
+    "Hello---" = truncate.preserve.with:"---" "Hello World" 5
+]
+
+; ---- wordwrap ----
+ensure.that: "wordwrap.at shortens long line" [
+    lines: split.lines wordwrap.at: 10 "one two three four five six seven"
+    (size lines) > 1
+]
+
+; ---- escape ----
+ensure.that: "escape returns quoted" [
+    s: {a long "string"}
+    contains? escape s "\\\""
+]
+ensure.that: "escape.json escapes quotes" [
+    s: {a long "string"}
+    contains? escape.json s "\\\""
+]
+ensure.that: "escape.regex transforms special chars" [
+    contains? escape.regex "hello world" "x20"
+]
+ensure.that: "escape.shell handles special chars" [
+    s: {a long "string"}
+    not? null? escape.shell s
+]
+ensure.that: "escape.xml escapes angle brackets" [
+    contains? escape.xml "a<b" "&lt;"
+]
+
+; ---- indent ----
+ensure.that: "indent adds whitespace prefix" [
+    s: "one\ntwo\nthree"
+    indented: indent s
+    and? (contains? indented "one") ((size indented) > (size s))
+]
+
+; ---- outdent ----
+ensure.that: "outdent removes leading whitespace" [
+    s: outdent {:
+        one
+    :}
+   contains? s "one"
+]
+
+; ---- translate ----
+ensure.that: "translate dictionary replace" [
+    "the green wolf" = translate "the brown fox" #[
+        brown: "green"
+        fox: "wolf"
+    ]
+]
+
+; ---- jaro ----
+ensure.that: "jaro identical" [(jaro "one" "one") = 1.0]
+ensure.that: "jaro similar" [(jaro "crate" "trace") > 0.7]
+ensure.that: "jaro disimilar" [(jaro "abcde" "vwxyz") = 0.0]
+
+; ---- levenshtein ----
+ensure.that: "levenshtein distance" [(levenshtein "for" "fur") = 1]
+ensure.that: "levenshtein same" [(levenshtein "one" "one") = 0]
+
+; ---- join ----
+ensure.that: "join block" [
+    "onetwothree" = join ["one" "two" "three"]
+]
+ensure.that: "join.with comma" [
+    "one,two,three" = join.with: "," ["one" "two" "three"]
+]
+ensure.that: "join mutates" [
+    a: ["one" "two"]
+    join 'a
+    "onetwo" = a
+]
+ensure.that: "join.words" [
+    "This is a sentence." = join.words ["This" "is" "a" "sentence."]
+]
+ensure.that: "join.lines" [
+    "a\nb" = join.lines ["a" "b"]
+]
+
+; ---- split ----
+ensure.that: "split.words" [
+    ["hello" "world"] = split.words "hello world"
+]
+ensure.that: "split.by commma" [
+    ["a" "b" "c"] = split.by: "," "a,b,c"
+]
+ensure.that: "split.at" [
+    ["hell" "oworld"] = split.at: 4 "helloworld"
+]
+ensure.that: "split.every" [
+    ["he" "ll" "ow" "or" "ld"] = split.every: 2 "helloworld"
+]
+ensure.that: "split.lines" [
+    ["hello" "world"] = split.lines "hello\nworld"
+]
+
+; ---- slice ----
+ensure.that: "slice string" ["Hell" = slice "Hello" 0 3]
+ensure.that: "slice full" ["Hello" = slice "Hello" 0 4]
+
+; ---- render (render.template) ----
+ensure.that: "render.template conditional" [
+    age: 30
+    tpl: {<||= (age > 21)? [||>You can enter<||][||>Too young<||]||>}
+    "You can enter" = render.template tpl
+]
+ensure.that: "render.template loop" [
+    items: ["x" "y"]
+    tpl: {<|| loop items 'item [||><||= item ||> <||]||>}
+    "x y " = render.template tpl
+]
+
+print "PASS strings/ops"

@@ -1,0 +1,100 @@
+; Module area: Strings — case functions and all predicates
+; Source: official docs + runtime verification
+
+; ---- upper ----
+ensure.that: "upper returns" ["HELLO" = upper "hello"]
+ensure.that: "upper mutates" [
+    s: "hello"
+    upper 's
+    "HELLO" = s
+]
+ensure.that: "upper char" ['A' = upper 'a']
+ensure.that: "upper unicode preserved" [
+    "HELLO WORLD, 你好!" = upper "hello World, 你好!"
+]
+
+; ---- lower ----
+ensure.that: "lower returns" ["hello" = lower "HELLO"]
+ensure.that: "lower mutates" [
+    s: "HELLO"
+    lower 's
+    "hello" = s
+]
+ensure.that: "lower char" ['a' = lower 'A']
+ensure.that: "lower unicode" [
+    "hello world, 你好!" = lower "HELLO WORLD, 你好!"
+]
+
+; ---- capitalize ----
+ensure.that: "capitalize returns" ["Hello world" = capitalize "hello world"]
+ensure.that: "capitalize mutates" [
+    s: "hello World"
+    capitalize 's
+    "Hello World" = s
+]
+
+; ---- upper? ----
+ensure.that: "upper? true" [upper? "HELLO"]
+ensure.that: "upper? false" [not? upper? "hello"]
+ensure.that: "upper? mixed" [not? upper? "Hello World"]
+ensure.that: "upper? char true" [upper? 'A']
+ensure.that: "upper? char false" [not? upper? 'a']
+ensure.that: "upper? unicode" [upper? "Ñ"]
+
+; ---- lower? ----
+ensure.that: "lower? true" [lower? "hello"]
+ensure.that: "lower? false" [not? lower? "HELLO"]
+ensure.that: "lower? mixed" [not? lower? "Hello World"]
+ensure.that: "lower? char true" [lower? 'a']
+ensure.that: "lower? char false" [not? lower? 'A']
+ensure.that: "lower? unicode" [lower? "ñ"]
+
+; ---- ascii? ----
+ensure.that: "ascii? char true" [ascii? 'd']
+ensure.that: "ascii? emoji false" [not? ascii? '😀']
+ensure.that: "ascii? string true" [ascii? "hello world"]
+ensure.that: "ascii? non-ascii false" [not? ascii? "Hællø wœrld"]
+ensure.that: "ascii? greek false" [not? ascii? "Γειά!"]
+
+; ---- numeric? ----
+ensure.that: "numeric? word false" [not? numeric? "hello"]
+ensure.that: "numeric? float true" [numeric? "3.14"]
+ensure.that: "numeric? integer true" [numeric? "18966"]
+ensure.that: "numeric? hex true" [numeric? "0xdeadbeef"]
+ensure.that: "numeric? time literal" [numeric? "3:5"]
+ensure.that: "numeric? bad suffix false" [not? numeric? "123xxy"]
+
+; ---- whitespace? ----
+ensure.that: "whitespace? word false" [not? whitespace? "hello"]
+ensure.that: "whitespace? space" [whitespace? " "]
+ensure.that: "whitespace? newline" [whitespace? "\n \n"]
+ensure.that: "whitespace? empty false" [not? whitespace? ""]
+ensure.that: "whitespace? char space" [whitespace? ' ']
+ensure.that: "whitespace? char a false" [not? whitespace? 'a']
+
+; ---- prefix? ----
+ensure.that: "prefix? string true" [prefix? "hello" "he"]
+ensure.that: "prefix? string false" [not? prefix? "boom" "he"]
+ensure.that: "prefix? regex true" [prefix? "hello" {/\w+/}]
+ensure.that: "prefix? regex false" [not? prefix? "world" {/\d+/}]
+ensure.that: "prefix? char true" [prefix? "hello" 'h']
+
+; ---- suffix? ----
+ensure.that: "suffix? string true" [suffix? "hello" "lo"]
+ensure.that: "suffix? string false" [not? suffix? "boom" "lo"]
+; Note: suffix? with regex returns false on this runtime (prefix? supports regex)
+ensure.that: "suffix? char true" [suffix? "hello" 'o']
+ensure.that: "suffix? char false" [not? suffix? "world" 'o']
+
+; ---- contains? ----
+ensure.that: "contains? string" [contains? "hello" "ll"]
+ensure.that: "contains? false" [not? contains? "hello" "x"]
+
+; ---- match? ----
+ensure.that: "match? regex true" [match? "hello" {/l/}]
+ensure.that: "match? regex false" [not? match? "hello" {/x/}]
+ensure.that: "match? literal" [match? "hello" "l"]
+ensure.that: "match?.in false" [not? match?.in:0..1 "hello" {/l/}]
+ensure.that: "match?.in true" [match?.in:2..4 "hello" {/l/}]
+
+print "PASS strings/case-and-predicates"
