@@ -1,0 +1,79 @@
+; Module area: Strings — match family, match?, replace family
+; Source: official docs + runtime verification
+
+; ---- match ----
+ensure.that: "match exact returns block of one" [
+    ["hello"] = match "hello" "hello"
+]
+ensure.that: "match regex returns all matches" [
+    ["123" "456"] = match "x: 123, y: 456" {/[0-9]+/}
+]
+ensure.that: "match no match returns empty" [
+    [] = match "this is a string" {/[0-9]+/}
+]
+
+; ---- match.once ----
+ensure.that: "match.once returns first only" [
+    ["123"] = match.once "x: 123, y: 456" {/[0-9]+/}
+]
+
+; ---- match.count ----
+ensure.that: "match.count" [2 = match.count "some words" {/\w+/}]
+
+; ---- match.capture ----
+ensure.that: "match.capture each char" [
+    ["a" "b" "c"] = match.capture "abc" {/(.)/}
+]
+ensure.that: "match.capture groups" [
+    [["123" "456"] ["789" "012"]] = match.capture "x: 123, y: 456 - z: 789, w: 012" {/\w: (\d+), \w: (\d+)/}
+]
+
+; ---- match.capture.named ----
+ensure.that: "match.capture.named returns block of dicts" [
+    matches: match.capture.named "x: 123, y: 456 - z: 789, w: 012" {/\w: (?<numA>\d+), \w: (?<numB>\d+)/}
+    and? (2 = size matches) (key? matches\0 "numA")
+]
+
+; ---- match.bounds ----
+ensure.that: "match.bounds returns ranges" [
+    bounds: match.bounds "hELlo wORLd" {/[A-Z]+/}
+    and? (contains? bounds 1..2) (contains? bounds 7..9)
+]
+
+; ---- match.in ----
+ensure.that: "match.in range returns matches within" [
+    ["l"] = match.in:0..2 "hello" {/l/}
+]
+
+; ---- match? (predicate) ----
+ensure.that: "match? regex" [match? "hello" {/l/}]
+ensure.that: "match? no match" [not? match? "hello" {/x/}]
+
+; ---- replace literal ----
+ensure.that: "replace literal all" [
+    "hexxo" = replace "hello" "l" "x"
+]
+
+; ---- replace mutates ----
+ensure.that: "replace mutates" [
+    s: "hello"
+    replace 's "l" "x"
+    "hexxo" = s
+]
+
+; ---- replace regex ----
+ensure.that: "replace regex digits" [
+    "Date: 2025" = replace "Date: 2024" {/\d+/} "2025"
+]
+
+; ---- replace with block — multi target single replacement ----
+ensure.that: "replace block single value" [
+    "xexxo" = replace "hello" ["h" "l"] "x"
+]
+
+; ---- replace with paired block ----
+ensure.that: "replace paired" [
+    "xellz" = replace "hello" ["h" "o"] ["x" "z"]
+]
+
+print "PASS strings/regex"

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "arturo-help": {
+      "command": "python3",
+      "args": ["skills/arturo-language/mcp/server.py"],
+      "env": {
+        "ARTURO_BIN": "skills/arturo-language/bin/arturo"
+      }
+    }
+  }
+}
